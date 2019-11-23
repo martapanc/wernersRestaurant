@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>WPB | Home</title>
-    <link rel="icon" th:href="@{/static/assets/images/favicon.png}">
+    <link rel="icon" th:href="@{/img/favicon.ico}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
     <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/static/assets/css/superslides.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/static/assets/css/slick.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/static/assets/css/animate.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/superslides.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/slick.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/animate.css}" rel="stylesheet" type="text/css">
 
     <link th:href="@{/css/main/style.css}" rel="stylesheet" type="text/css">
     <link th:href="@{/css/AdminLTE.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/static/assets/css/_all-skins.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/_all-skins.css}" rel="stylesheet" type="text/css">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" >
     <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" >
@@ -44,7 +44,7 @@
                     </button>
                     <!-- LOGO -->
                     <div class="pull-left image" style="margin: 10px">
-                        <img src="dist/img/burger-160x160.jpg" height="60px" class="img-circle" alt="User Image">
+                        <img th:src="@{/img/burger160x160.jpg}" height="60px" class="img-circle" alt="User Image">
                     </div>
                     <a class="navbar-brand" href="#"><b>Werner's </b><span style="font-size: 16px">Panini&amp;Burgers</span></a>
                 </div>
@@ -75,7 +75,7 @@
                 <div id="slides">
                     <ul class="slides-container">
 
-                        <li><img src="dist/img/fast-food.jpg" alt="img">
+                        <li><img th:src="@{/img/slider/fast-food.jpg}" alt="img">
                             <div class="slider_caption slider_right_caption">
                                 <h2>Taste the quality</h2>
                                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
@@ -84,7 +84,7 @@
                                 <a class="slider_btn" href="#">Know More</a>
                             </div></li>
                         <!-- Start single slider-->
-                        <li><img src="dist/img/restaurant-2.jpg" alt="img">
+                        <li><img th:src="@{/img/slider/restaurant-2.jpg}" alt="img">
                             <div class="slider_caption">
                                 <h2>Largest &amp; Beautiful Environment</h2>
                                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
@@ -92,7 +92,7 @@
                                 <a class="slider_btn" href="#">Know More</a>
                             </div></li>
                         <!-- Start single slider-->
-                        <li><img src="dist/img/photo1.png" alt="img">
+                        <li><img th:src="@{/img/slider/photo1.png}" alt="img">
                             <div class="slider_caption">
                                 <h2>Find out you in better way</h2>
                                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
@@ -142,8 +142,8 @@
                                 <li>
                                     <div class="media">
                                         <div class="media-left">
-                                            <a class="news_img" href="#"> <img class="media-object"
-                                                                               src="dist/img/flat-icon-gastronomy/burger.svg" alt="img">
+                                            <a class="news_img" href="#">
+                                                <img class="media-object" th:src="@{/img/gastronomy/burger.svg}" alt="img">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -154,8 +154,8 @@
                                 <li>
                                     <div class="media">
                                         <div class="media-left">
-                                            <a class="news_img" href="#"> <img class="media-object"
-                                                                               src="dist/img/flat-icon-gastronomy/pizza-2.svg" alt="img">
+                                            <a class="news_img" href="#">
+                                                <img class="media-object" th:src="@{/img/gastronomy/pizza-2.svg}" alt="img">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -166,8 +166,8 @@
                                 <li>
                                     <div class="media">
                                         <div class="media-left">
-                                            <a class="news_img" href="#"> <img class="media-object"
-                                                                               src="dist/img/flat-icon-gastronomy/salad.svg" alt="img">
+                                            <a class="news_img" href="#">
+                                                <img class="media-object" th:src="@{/img/gastronomy/salad.svg}" alt="img">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -185,8 +185,8 @@
                                     <li>
                                         <div class="media">
                                             <div class="media-left">
-                                                <a class="news_img" href="#"> <img class="media-object"
-                                                                                   src="dist/img/flat-icon-gastronomy/cupcake-1.svg" alt="img">
+                                                <a class="news_img" href="#">
+                                                    <img class="media-object" th:src="@{/img/gastronomy/cupcake.svg}" alt="img">
                                                 </a>
                                             </div>
                                             <div class="media-body">
@@ -197,8 +197,8 @@
                                     <li>
                                         <div class="media">
                                             <div class="media-left">
-                                                <a class="news_img" href="#"> <img class="media-object"
-                                                                                   src="dist/img/flat-icon-gastronomy/glass-3.svg" alt="img">
+                                                <a class="news_img" href="#">
+                                                    <img class="media-object" th:src="@{/img/gastronomy/glass-3.svg}" alt="img">
                                                 </a>
                                             </div>
                                             <div class="media-body">
@@ -209,8 +209,8 @@
                                     <li>
                                         <div class="media">
                                             <div class="media-left">
-                                                <a class="news_img" href="#"> <img class="media-object"
-                                                                                   src="dist/img/flat-icon-gastronomy/sushi-1.svg" alt="img">
+                                                <a class="news_img" href="#">
+                                                    <img class="media-object" th:src="@{/img/gastronomy/sushi-1.svg}" alt="img">
                                                 </a>
                                             </div>
                                             <div class="media-body">
@@ -223,8 +223,8 @@
                                     <li>
                                         <div class="media">
                                             <div class="media-left">
-                                                <a class="news_img" href="#"> <img class="media-object"
-                                                                                   src="dist/img/flat-icon-gastronomy/cupcake-2.svg" alt="img">
+                                                <a class="news_img" href="#">
+                                                    <img class="media-object" th:src="@{/img/gastronomy/cupcake-2.svg}" alt="img">
                                                 </a>
                                             </div>
                                             <div class="media-body">
@@ -235,8 +235,8 @@
                                     <li>
                                         <div class="media">
                                             <div class="media-left">
-                                                <a class="news_img" href="#"> <img class="media-object"
-                                                                                   src="dist/img/flat-icon-gastronomy/glass-3.svg" alt="img">
+                                                <a class="news_img" href="#">
+                                                    <img class="media-object" th:src="@{/img/gastronomy/hot-dog-1.svg}" alt="img">
                                                 </a>
                                             </div>
                                             <div class="media-body">
@@ -247,8 +247,8 @@
                                     <li>
                                         <div class="media">
                                             <div class="media-left">
-                                                <a class="news_img" href="#"> <img class="media-object"
-                                                                                   src="dist/img/flat-icon-gastronomy/burger.svg" alt="img">
+                                                <a class="news_img" href="#">
+                                                    <img class="media-object" th:src="@{/img/gastronomy/pasta.svg}" alt="img">
                                                 </a>
                                             </div>
                                             <div class="media-body">
@@ -265,8 +265,8 @@
                                 <li>
                                     <div class="media">
                                         <div class="media-left">
-                                            <a class="news_img" href="#"> <img class="media-object"
-                                                                               src="dist/img/flat-icon-gastronomy/pizza-2.svg" alt="img">
+                                            <a class="news_img" href="#">
+                                                <img class="media-object" th:src="@{/img/gastronomy/noodles.svg}" alt="img">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -277,8 +277,8 @@
                                 <li>
                                     <div class="media">
                                         <div class="media-left">
-                                            <a class="news_img" href="#"> <img class="media-object"
-                                                                               src="dist/img/flat-icon-gastronomy/pizza-2.svg" alt="img">
+                                            <a class="news_img" href="#">
+                                                <img class="media-object" th:src="@{/img/gastronomy/pint.svg}" alt="img">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -289,8 +289,8 @@
                                 <li>
                                     <div class="media">
                                         <div class="media-left">
-                                            <a class="news_img" href="#"> <img class="media-object"
-                                                                               src="dist/img/flat-icon-gastronomy/pizza-2.svg" alt="img">
+                                            <a class="news_img" href="#">
+                                                <img class="media-object" th:src="@{/img/gastronomy/cupcake-2.svg}" alt="img">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -375,7 +375,7 @@
                     <div class="pull-right hidden-xs">
                         <b>Version</b> 1.0
                     </div>
-                    <strong>Copyright &copy; 2016-2017 <a href="http://gitlab.inf.unibz.it/InMoSe_group9/">The Awesome Group 9 @ UniBZ</a>.
+                    <strong>Copyright &copy; 2016-2017 <a href="https://ole.unibz.it/enrol/index.php?id=550">The Awesome Group 9 @ UniBZ</a>.
                     </strong> All rights reserved.
                 </div>
             </div>
@@ -386,18 +386,18 @@
 <!-- END FOOTER SECTION  -->
 
 <!-- Javascript Files -->
-<script th:src="@{/static/assets/js/jQuery/jquery-2.2.3.min.js}"></script>
-<script th:src="@{/static/assets/js/bootstrap.js}"></script>
+<script th:src="@{/js/jQuery/jquery-2.2.3.min.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
 
-<script th:src="@{/static/assets/js/main/slick.min.js}"></script>
-<script th:src="@{/static/assets/js/main/jquery.animate-enhanced.min.js}"></script>
-<script th:src="@{/static/assets/js/main/jquery.easing.1.3.js}"></script>
-<script th:src="@{/static/assets/js/main/jquery.superslides.min.js}"></script>
+<script th:src="@{/js/main/slick.min.js}"></script>
+<script th:src="@{/js/main/jquery.animate-enhanced.min.js}"></script>
+<script th:src="@{/js/main/jquery.easing.1.3.js}"></script>
+<script th:src="@{/js/main/jquery.superslides.min.js}"></script>
 
-<script th:src="@{/static/assets/js/main/jquery.tosrus.min.all.js}"></script>
+<script th:src="@{/js/main/jquery.tosrus.min.all.js}"></script>
 
-<script th:src="@{/static/assets/js/app.js}"></script>
-<script th:src="@{/static/assets/js/main/homepageUtil.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/main/homepageUtil.js}"></script>
 
 <!--<script src='https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js'></script>-->
 

@@ -34,13 +34,13 @@
 
 }
 .slides-navigation a.prev {
-  background-image: url("../img/slider/navigation-icon.png");
+  background-image: url('../img/slider/navigation-icon.png');
   background-repeat: no-repeat; 
   background-position: left -240px center;
   left: 0;  
 }
 .slides-navigation a.next {
-  background-image: url("../img/slider/navigation-icon.png");
+  background-image: url('../img/slider/navigation-icon.png');
   background-position: left -316px center;
   background-repeat: no-repeat;
   right: 0;
