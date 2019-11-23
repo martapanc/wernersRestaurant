@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>WPB | Home</title>
+
     <link rel="icon" th:href="@{/img/favicon.ico}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
@@ -21,50 +23,12 @@
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 <body>
 
-<!-- BEGIN HEADER SECTION -->
-<header id="header">
-    <!-- BEGIN MENU -->
-    <div class="menu_area">
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                            aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
-                            class="icon-bar"></span>
-                    </button>
-                    <!-- LOGO -->
-                    <div class="pull-left image" style="margin: 10px">
-                        <img th:src="@{/img/burger160x160.jpg}" height="60px" class="img-circle" alt="User Image">
-                    </div>
-                    <a class="navbar-brand" href="#"><b>Werner's </b><span style="font-size: 16px">Panini&amp;Burgers</span></a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-                        <li class="active"><a href="#"><i class="fa fa-home"></i>&ensp;Home</a></li>
-                        <li><a href="#aboutUs"><i class="fa fa-info"></i>&ensp;About Us</a></li>
-                        <li><a href="pages/home/documentation.jsp"><i class="fa fa-book"></i>&ensp;Documentation</a></li>
-                        <li><a href="pages/home/table-reservation.jsp"><i class="fa fa-cutlery"></i>&ensp;Table Reservation</a></li>
-                        <li><a href="pages/home/takeaway-order.jsp"><i class="fa fa-paper-plane-o"></i>&ensp;Take-away Order</a></li>
-                        <li><a href="loginForm.jsp"><i class="fa fa-user"></i>&ensp;Login/Register</a></li>
-                    </ul>
-                </div>
-                <!--/.nav-collapse -->
-            </div>
-        </nav>
-    </div>
-    <!-- END MENU -->
-</header>
-<!-- END HEADER SECTION -->
+<div th:insert="fragments/header :: header"></div>
 
 <!-- BEGIN SLIDER SECTION -->
 <section id="slider">
@@ -78,28 +42,33 @@
                         <li><img th:src="@{/img/slider/fast-food.jpg}" alt="img">
                             <div class="slider_caption slider_right_caption">
                                 <h2>Taste the quality</h2>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
-                                    its layout.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.Many desktop
-                                    publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search</p>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                                    looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                                    of letters. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default
+                                    model text, and a search</p>
                                 <a class="slider_btn" href="#">Know More</a>
-                            </div></li>
+                            </div>
+                        </li>
                         <!-- Start single slider-->
                         <li><img th:src="@{/img/slider/restaurant-2.jpg}" alt="img">
                             <div class="slider_caption">
                                 <h2>Largest &amp; Beautiful Environment</h2>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
-                                    its layout.</p>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                                    looking at its layout.</p>
                                 <a class="slider_btn" href="#">Know More</a>
-                            </div></li>
+                            </div>
+                        </li>
                         <!-- Start single slider-->
                         <li><img th:src="@{/img/slider/photo1.png}" alt="img">
                             <div class="slider_caption">
                                 <h2>Find out you in better way</h2>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
-                                    its layout.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.Many desktop
-                                    publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search</p>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                                    looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                                    of letters. Many desktop publishing packages and web page editors now use Lorem Ipsum as their
+                                    default model text, and a search</p>
                                 <a class="slider_btn" href="#">Know More</a>
-                            </div></li>
+                            </div>
+                        </li>
                     </ul>
                     <nav class="slides-navigation">
                         <a href="#" class="next"></a> <a href="#" class="prev"></a>
@@ -120,10 +89,11 @@
                 <div class="aboutus_area wow fadeInLeft">
                     <h2 class="titile">About Us</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+                        type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -228,7 +198,8 @@
                                                 </a>
                                             </div>
                                             <div class="media-body">
-                                                <a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text</a> <span class="feed_date">27.02.15</span>
+                                                <a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text</a> <span
+                                                    class="feed_date">27.02.15</span>
                                             </div>
                                         </div>
                                     </li>
@@ -252,7 +223,8 @@
                                                 </a>
                                             </div>
                                             <div class="media-body">
-                                                <a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text</a> <span class="feed_date">28.02.15</span>
+                                                <a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text</a> <span
+                                                    class="feed_date">28.02.15</span>
                                             </div>
                                         </div>
                                     </li>
@@ -307,87 +279,13 @@
         </div>
     </div>
 </section>
-<!-- END ABOUT US SECTION -->
 
-<!-- BEGIN FOOTER SECTION -->
-<footer id="footer">
-    <!-- Start footer top area -->
-    <div class="footer_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-ld-3  col-md-3 col-sm-3">
-                    <div class="single_footer_widget">
-                        <h3>About Us</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book.</p>
-                    </div>
-                </div>
-                <div class="col-ld-3  col-md-3 col-sm-3">
-                    <div class="single_footer_widget">
-                        <h3>Community</h3>
-                        <ul class="footer_widget_nav">
-                            <li><a href="#">Our Team</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">News &amp; Media</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-ld-3  col-md-3 col-sm-3">
-                    <div class="single_footer_widget">
-                        <h3>Others</h3>
-                        <ul class="footer_widget_nav">
-                            <li><a href="#">Link 1</a></li>
-                            <li><a href="#">Link 2</a></li>
-                            <li><a href="#">Link 3</a></li>
-                            <li><a href="#">Link 4</a></li>
-                            <li><a href="#">Link 5</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-ld-3  col-md-3 col-sm-3">
-                    <div class="single_footer_widget">
-                        <h3>Social Links</h3>
-                        <ul class="footer_social">
-                            <li><a data-toggle="tooltip" data-placement="top" title="Facebook" class="soc_tooltip" href="#"><i
-                                    class="fa fa-facebook"></i></a></li>
-                            <li><a data-toggle="tooltip" data-placement="top" title="Twitter" class="soc_tooltip" href="#"><i
-                                    class="fa fa-twitter"></i></a></li>
-                            <li><a data-toggle="tooltip" data-placement="top" title="Google+" class="soc_tooltip" href="#"><i
-                                    class="fa fa-google-plus"></i></a></li>
-                            <li><a data-toggle="tooltip" data-placement="top" title="Linkedin" class="soc_tooltip" href="#"><i
-                                    class="fa fa-linkedin"></i></a></li>
-                            <li><a data-toggle="tooltip" data-placement="top" title="Youtube" class="soc_tooltip" href="#"><i
-                                    class="fa fa-youtube"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End footer top area -->
-
-    <!-- Start footer bottom area -->
-    <div class="footer_bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="pull-right hidden-xs">
-                        <b>Version</b> 1.0
-                    </div>
-                    <strong>Copyright &copy; 2016-2017 <a href="https://ole.unibz.it/enrol/index.php?id=550">The Awesome Group 9 @ UniBZ</a>.
-                    </strong> All rights reserved.
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End footer bottom area -->
-</footer>
-<!-- END FOOTER SECTION  -->
+<div th:insert="fragments/footer :: footer"></div>
 
 <!-- Javascript Files -->
 <script th:src="@{/js/jQuery/jquery-2.2.3.min.js}"></script>
 <script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/app.js}"></script>
 
 <script th:src="@{/js/main/slick.min.js}"></script>
 <script th:src="@{/js/main/jquery.animate-enhanced.min.js}"></script>
@@ -396,10 +294,7 @@
 
 <script th:src="@{/js/main/jquery.tosrus.min.all.js}"></script>
 
-<script th:src="@{/js/app.js}"></script>
 <script th:src="@{/js/main/homepageUtil.js}"></script>
-
-<!--<script src='https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js'></script>-->
 
 </body>
 </html>

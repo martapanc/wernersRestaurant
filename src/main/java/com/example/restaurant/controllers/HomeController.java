@@ -15,4 +15,9 @@ public class HomeController {
     public String homepage() {
         return "index";
     }
+
+    @GetMapping("/documentation")
+    public String documentation() {
+        return "pages/documentation/docs";
+    }
 }
