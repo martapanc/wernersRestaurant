@@ -7,11 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @SpringBootApplication
 public class RestaurantApplication {
 
-    @RequestMapping("/")
-    public String index() {
-        return "greeting";
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(RestaurantApplication.class, args);
     }
