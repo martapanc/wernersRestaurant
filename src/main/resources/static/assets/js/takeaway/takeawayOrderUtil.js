@@ -69,14 +69,15 @@ window.actionEvent = {
             if (row.name === entry[0])
                 dupCheck = i; // Store the index of the duplicate item
         });
-        if (dupCheck === -1) // If the cart has no duplicates (=the loop found no
-        // match and the index did not change) push a new
-        // item
+        if (dupCheck === -1) { // If the cart has no duplicates (=the loop found no match and the index did not change) push a new  item
             cart.push([row.name, 1, row.price, row.price, row.id]);
-        else {
-            cart[dupCheck][1] += 1; // Else update quantity and price of the
-                                    // item already in cart
-            cart[dupCheck][2] += cart[dupCheck][3];
+            price += row.price;
+        } else {
+            if (cart[dupCheck][1] < 20) {
+                cart[dupCheck][1] += 1; // Else update quantity and price of the item already in cart
+                cart[dupCheck][2] += cart[dupCheck][3];
+                price += row.price;
+            }
         }
 
         $(".order-list").html(""); // Display the cart
@@ -88,15 +89,16 @@ window.actionEvent = {
                     + "<td>&ensp;€ " + entry[2].toFixed(2) + "</td></tr>"
                 );
         });
-        price += row.price;
+
+
         $("#total-price-box").html('<h4><span class="pull-right total-price">Total price: € ' + price.toFixed(2) + '</span></h4>');
     }
 };
 
 // Increase quantity on "plus" click
-$(".cart-form")
-    .on("click", "i.fa-plus-square", function () {
-        var i = $(this).parent().parent().index(); // store index of selected row
+$(".cart-form").on("click", "i.fa-plus-square", function () {
+    var i = $(this).parent().parent().index(); // store index of selected row
+    if (cart[i][1] < 20) {
         cart[i][1] += 1; // increase quantity by 1
         cart[i][2] += cart[i][3]; // increase price by the price of a single item
         price = 0;
@@ -113,39 +115,38 @@ $(".cart-form")
                 );
         });
         $("#total-price-box").html('<h4><span class="pull-right total-price">Total price: € ' + price.toFixed(2) + '</span></h4>');
-
-    });
+    }
+});
 
 // Decrease quantity on "minus" click. Remove when qnt reaches 0
-$(".cart-form")
-    .on("click", "i.fa-minus-square", function () {
-        var i = $(this).parent().parent().index();
-        cart[i][1] -= 1;
-        if (cart[i][1] != 0) {
-            cart[i][2] -= cart[i][3]; // decrease price by the
-            // price of a single item
-        } else {
-            cart.splice(i, 1); // remove item from array when
-            // quantity reaches 0
-            if (cart[0] == null)
-                $("#checkout-btn").prop("disabled", true);
-        }
-        price = 0;
-        cart.forEach(function (entry) { // update cart
-            price += entry[2];
-        });
-        $(".order-list").html("");
-        cart.forEach(function (entry) {
-            $(".order-list")
-                .append(
-                    "<tr><td>" + entry[0] + "&emsp;</td>"
-                    + "<td><i class='fa fa-plus-square fa-lg'></i>&ensp;" + entry[1] + "&ensp;<i class='fa fa-minus-square fa-lg'></i></td>"
-                    + "<td>&ensp;€ " + entry[2].toFixed(2) + "</td></tr>"
-                );
-        });
-        $("#total-price-box").html(
-            '<h4><span class="pull-right total-price">Total price: € ' + price.toFixed(2) + '</span></h4>');
+$(".cart-form").on("click", "i.fa-minus-square", function () {
+    var i = $(this).parent().parent().index();
+    cart[i][1] -= 1;
+    if (cart[i][1] != 0) {
+        cart[i][2] -= cart[i][3]; // decrease price by the
+        // price of a single item
+    } else {
+        cart.splice(i, 1); // remove item from array when
+        // quantity reaches 0
+        if (cart[0] == null)
+            $("#checkout-btn").prop("disabled", true);
+    }
+    price = 0;
+    cart.forEach(function (entry) { // update cart
+        price += entry[2];
     });
+    $(".order-list").html("");
+    cart.forEach(function (entry) {
+        $(".order-list")
+            .append(
+                "<tr><td>" + entry[0] + "&emsp;</td>"
+                + "<td><i class='fa fa-plus-square fa-lg'></i>&ensp;" + entry[1] + "&ensp;<i class='fa fa-minus-square fa-lg'></i></td>"
+                + "<td>&ensp;€ " + entry[2].toFixed(2) + "</td></tr>"
+            );
+    });
+    $("#total-price-box").html(
+        '<h4><span class="pull-right total-price">Total price: € ' + price.toFixed(2) + '</span></h4>');
+});
 
 // Checkout button functions
 $("#checkout-btn").on("click", function () {
