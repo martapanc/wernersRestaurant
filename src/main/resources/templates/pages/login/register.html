@@ -1,0 +1,109 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WPB | Takeaway Order</title>
+
+    <link rel="icon" th:href="@{/img/favicon.ico}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/home/reservation.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/home/login.css}" rel="stylesheet" type="text/css">
+
+    <link th:href="@{/css/main/style.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/AdminLTE.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+
+    <link th:href="@{/css/datetimepicker.min.css}" rel="stylesheet" type="text/css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/image-picker/0.3.1/image-picker.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="hold-transition login-page">
+
+<div class="register-box">
+    <div class="register-logo">
+        <a href="/homepage"><b>Werner's</b>Panini&amp;Burgers</a>
+    </div>
+    <div class="register-box-body">
+        <p class="login-box-msg">Create a New Account</p>
+<!--        <c:if test="${message != null}">-->
+<!--            <div class="alert alert-danger text-center" id="message-div">-->
+<!--                ${message}-->
+<!--            </div>-->
+<!--        </c:if>-->
+        <form action="/register" method="post" data-toggle="validator">
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="Full name" name="fullname"required> <span
+                    class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="email" class="form-control" placeholder="Email" name="email" required> <span
+                    class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" id="password" class="form-control" name="password" placeholder="Password" required> <span
+                    class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" name="password-confirm" class="form-control" placeholder="Retype password"
+                       data-match="#password" data-match-error="Passwords don't match" required> <span
+                    class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group has-feedback text-center">
+                <p>Choose Avatar</p>
+                <select class="image-picker text-center" name="avatar">
+                    <option data-img-src="/img/avatars/avatar1.png" data-img-class="first" data-img-alt="Page 1" value="../img/avatars/avatar1.png" selected></option>
+                    <option data-img-src="/img/avatars/avatar2.png" data-img-alt="Page 2" value="/img/avatars/avatar2.png"></option>
+                    <option data-img-src="/img/avatars/avatar4.png" data-img-alt="Page 3" value="/img/avatars/avatar4.png"></option>
+                    <option data-img-src="/img/avatars/gusteau160x160.jpg" data-img-alt="Page 4" data-img-class="last" value="/img/avatars/gusteau160x160.jpg"></option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="checkbox icheck form-group has-feedback">
+                        <label> <input type="checkbox" required> I agree to the <a href="#">terms</a>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+                </div>
+            </div>
+        </form>
+        <a href="/login" class="text-center">I am already registered</a>
+    </div>
+</div>
+
+</body>
+
+<script th:src="@{/js/jQuery/jquery-2.2.3.min.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/moment/moment.min.js}"></script>
+<script th:src="@{/js/validator.min.js}"></script>
+<script th:src="@{/js/datetimepicker.min.js}"></script>
+<script th:src="@{/js/fastclick.js}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/image-picker/0.3.1/image-picker.min.js"></script>
+
+<script th:src="@{/js/validator.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/bootstrap-table.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/locale/bootstrap-table-en-US.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/extensions/resizable/bootstrap-table-resizable.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/extensions/colResizable/colResizable-1.6.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/extensions/filter-control/bootstrap-table-filter-control.min.js}"></script>
+
+<script th:src="@{/js/tables/tableutil.js}"></script>
+<script th:src="@{/js/takeaway/takeawayOrderUtil.js}"></script>
+
+<script>
+    $("select").imagepicker()
+</script>
+
+</html>

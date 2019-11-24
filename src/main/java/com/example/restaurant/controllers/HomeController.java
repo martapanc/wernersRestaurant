@@ -30,4 +30,19 @@ public class HomeController {
     public String takeaway() {
         return "pages/takeaway/takeaway";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "pages/login/login";
+    }
+
+    @GetMapping("/register")
+    public String register() {
+        return "pages/login/register";
+    }
+
+    @GetMapping("/recover-password")
+    public String recoverPassword() {
+        return "pages/login/recoverPassword";
+    }
 }

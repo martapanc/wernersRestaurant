@@ -16,7 +16,6 @@ $(document).ready(function () {
             });
 
             response.forEach(function (entry) {
-                console.log(entry);
                 $("#" + entry.name.toLowerCase() + "-btn").click(function () {
                     removeActive();
                     $(this).addClass("active");
@@ -59,20 +58,18 @@ function actionFormatter(value, row, index) {
 }
 
 var price = 0;
-var cart = new Array();
+var cart = [];
 window.actionEvent = {
     'click .add': function (e, value, row, index) {
-        $("#checkout-btn").prop("disabled", false); // enable Checkout button
-                                                    // when at least one item is
-                                                    // in the cart
+        $("#checkout-btn").prop("disabled", false); // enable Checkout button when at least one item is in the cart
 
         // Check if the cart already includes the selected item
         var dupCheck = -1;
         cart.forEach(function (entry, i) {
-            if (row.name == entry[0])
+            if (row.name === entry[0])
                 dupCheck = i; // Store the index of the duplicate item
         });
-        if (dupCheck == -1) // If the cart has no duplicates (=the loop found no
+        if (dupCheck === -1) // If the cart has no duplicates (=the loop found no
         // match and the index did not change) push a new
         // item
             cart.push([row.name, 1, row.price, row.price, row.id]);
@@ -83,153 +80,109 @@ window.actionEvent = {
         }
 
         $(".order-list").html(""); // Display the cart
-        cart
-            .forEach(function (entry) {
-                $(".order-list")
-                    .append(
-                        "<tr><td>"
-                        + entry[0]
-                        + "&emsp;</td>"
-                        + "<td><i class='fa fa-plus-square fa-lg'></i>&ensp;"
-                        + entry[1]
-                        + "&ensp;<i class='fa fa-minus-square fa-lg'></i></td>"
-                        + "<td>&ensp;€ "
-                        + entry[2].toFixed(2)
-                        + "</td></tr>");
-            });
+        cart.forEach(function (entry) {
+            $(".order-list")
+                .append(
+                    "<tr><td>" + entry[0] + "&emsp;</td>"
+                    + "<td><i class='fa fa-plus-square fa-lg'></i>&ensp;" + entry[1] + "&ensp;<i class='fa fa-minus-square fa-lg'></i></td>"
+                    + "<td>&ensp;€ " + entry[2].toFixed(2) + "</td></tr>"
+                );
+        });
         price += row.price;
-        $("#total-price-box").html(
-            // Display the total price
-            '<h4><span class="pull-right total-price">Total price: € '
-            + price.toFixed(2) + '</span></h4>');
+        $("#total-price-box").html('<h4><span class="pull-right total-price">Total price: € ' + price.toFixed(2) + '</span></h4>');
     }
 };
 
 // Increase quantity on "plus" click
 $(".cart-form")
-    .on(
-        "click",
-        "i.fa-plus-square",
-        function () {
-            var i = $(this).parent().parent().index(); // store index
-            // of selected
-            // row
-            cart[i][1] += 1; // increase quantity by 1
-            cart[i][2] += cart[i][3]; // increase price by the price
-            // of a single item
-            price = 0;
-            cart.forEach(function (entry) { // update cart
-                price += entry[2];
-            });
-            $(".order-list").html("");
-            cart
-                .forEach(function (entry) { // display changes
-                    $(".order-list")
-                        .append(
-                            "<tr><td>"
-                            + entry[0]
-                            + "&emsp;</td>"
-                            + "<td><i class='fa fa-plus-square fa-lg'></i>&ensp;"
-                            + entry[1]
-                            + "&ensp;<i class='fa fa-minus-square fa-lg'></i></td>"
-                            + "<td>&ensp;€ "
-                            + entry[2].toFixed(2)
-                            + "</td></tr>");
-                });
-            $("#total-price-box").html(
-                // update and display total price
-                '<h4><span class="pull-right total-price">Total price: € '
-                + price.toFixed(2) + '</span></h4>');
-
+    .on("click", "i.fa-plus-square", function () {
+        var i = $(this).parent().parent().index(); // store index of selected row
+        cart[i][1] += 1; // increase quantity by 1
+        cart[i][2] += cart[i][3]; // increase price by the price of a single item
+        price = 0;
+        cart.forEach(function (entry) { // update cart
+            price += entry[2];
         });
+        $(".order-list").html("");
+        cart.forEach(function (entry) { // display changes
+            $(".order-list")
+                .append(
+                    "<tr><td>" + entry[0] + "&emsp;</td>"
+                    + "<td><i class='fa fa-plus-square fa-lg'></i>&ensp;" + entry[1] + "&ensp;<i class='fa fa-minus-square fa-lg'></i></td>"
+                    + "<td>&ensp;€ " + entry[2].toFixed(2) + "</td></tr>"
+                );
+        });
+        $("#total-price-box").html('<h4><span class="pull-right total-price">Total price: € ' + price.toFixed(2) + '</span></h4>');
+
+    });
 
 // Decrease quantity on "minus" click. Remove when qnt reaches 0
 $(".cart-form")
-    .on(
-        "click",
-        "i.fa-minus-square",
-        function () {
-            var i = $(this).parent().parent().index();
-            cart[i][1] -= 1;
-            if (cart[i][1] != 0) {
-                cart[i][2] -= cart[i][3]; // decrease price by the
-                // price of a single item
-            } else {
-                cart.splice(i, 1); // remove item from array when
-                // quantity reaches 0
-                if (cart[0] == null)
-                    $("#checkout-btn").prop("disabled", true);
-            }
-            price = 0;
-            cart.forEach(function (entry) { // update cart
-                price += entry[2];
-            });
-            $(".order-list").html("");
-            cart
-                .forEach(function (entry) {
-                    $(".order-list")
-                        .append(
-                            "<tr><td>"
-                            + entry[0]
-                            + "&emsp;</td>"
-                            + "<td><i class='fa fa-plus-square fa-lg'></i>&ensp;"
-                            + entry[1]
-                            + "&ensp;<i class='fa fa-minus-square fa-lg'></i></td>"
-                            + "<td>&ensp;€ "
-                            + entry[2].toFixed(2)
-                            + "</td></tr>");
-                });
-            $("#total-price-box").html(
-                '<h4><span class="pull-right total-price">Total price: € '
-                + price.toFixed(2) + '</span></h4>');
-        });
-
-// Checkout button functions
-$("#checkout-btn")
-    .on(
-        "click",
-        function () {
-            var jsoncart = {
-                jcart: []
-            };
-            cart.forEach(function (entry) {
-                jsoncart.jcart.push({
-                    "name": entry[0],
-                    "qnt": entry[1],
-                    "totPrice": entry[2],
-                    "uPrice": entry[3],
-                    "id": entry[4]
-                });
-            });
-            var cartToSend = JSON.stringify(jsoncart.jcart);
-            if (typeof (Storage) != "undefined") {
-                localStorage.setItem("cart", cartToSend);
-                localStorage.setItem("totPrice", price)
-                console.log("Cart saved: " + cartToSend + "\nPrice: "
-                    + price);
-            } else {
-                console.log("Local storage non supported.")
-            }
-            var session = document.getElementById("session").value;
-            console.log("session " + session);
-            if (session != "")
-                window.location.href = "takeawayCheckout.jsp";
-            else
-                window.location.href = "/restaurantProject/pages/home/takeaway-checkout.jsp";
-        });
-
-// Reset button functions
-$("#reset-btn").on(
-    "click",
-    function () {
-        cart = new Array();
+    .on("click", "i.fa-minus-square", function () {
+        var i = $(this).parent().parent().index();
+        cart[i][1] -= 1;
+        if (cart[i][1] != 0) {
+            cart[i][2] -= cart[i][3]; // decrease price by the
+            // price of a single item
+        } else {
+            cart.splice(i, 1); // remove item from array when
+            // quantity reaches 0
+            if (cart[0] == null)
+                $("#checkout-btn").prop("disabled", true);
+        }
         price = 0;
+        cart.forEach(function (entry) { // update cart
+            price += entry[2];
+        });
         $(".order-list").html("");
+        cart.forEach(function (entry) {
+            $(".order-list")
+                .append(
+                    "<tr><td>" + entry[0] + "&emsp;</td>"
+                    + "<td><i class='fa fa-plus-square fa-lg'></i>&ensp;" + entry[1] + "&ensp;<i class='fa fa-minus-square fa-lg'></i></td>"
+                    + "<td>&ensp;€ " + entry[2].toFixed(2) + "</td></tr>"
+                );
+        });
         $("#total-price-box").html(
-            '<h4><span class="pull-right total-price">Total price: € '
-            + price.toFixed(2) + '</span></h4>');
-        $("#checkout-btn").prop("disabled", true);
+            '<h4><span class="pull-right total-price">Total price: € ' + price.toFixed(2) + '</span></h4>');
     });
 
+// Checkout button functions
+$("#checkout-btn").on("click", function () {
+    var jsoncart = {
+        jcart: []
+    };
+    cart.forEach(function (entry) {
+        jsoncart.jcart.push({
+            "name": entry[0],
+            "qnt": entry[1],
+            "totPrice": entry[2],
+            "uPrice": entry[3],
+            "id": entry[4]
+        });
+    });
+    var cartToSend = JSON.stringify(jsoncart.jcart);
+    if (typeof (Storage) != "undefined") {
+        localStorage.setItem("cart", cartToSend);
+        localStorage.setItem("totPrice", price)
+        console.log("Cart saved: " + cartToSend + "\nPrice: " + price);
+    } else {
+        console.log("Local storage non supported.")
+    }
+    var session = document.getElementById("session").value;
+    console.log("session " + session);
+    if (session != "")
+        window.location.href = "takeawayCheckout.jsp";
+    else
+        window.location.href = "/restaurantProject/pages/home/takeaway-checkout.jsp";
+});
 
-
+// Reset button functions
+$("#reset-btn").on("click", function () {
+    cart = new Array();
+    price = 0;
+    $(".order-list").html("");
+    $("#total-price-box").html(
+        '<h4><span class="pull-right total-price">Total price: € ' + price.toFixed(2) + '</span></h4>');
+    $("#checkout-btn").prop("disabled", true);
+});
