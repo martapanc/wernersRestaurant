@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WPB | Takeaway Order</title>
+
+    <link rel="icon" th:href="@{/img/favicon.ico}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/home/reservation.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/home/takeaway.css}" rel="stylesheet" type="text/css">
+
+    <link th:href="@{/css/main/style.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/AdminLTE.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+
+    <link th:href="@{/css/datetimepicker.min.css}" rel="stylesheet" type="text/css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div th:insert="fragments/header :: header"></div>
+
+<div class="col-md-12">
+    <div class="body">
+        <section class="content-header">
+            <h1>
+                Online Reservation
+                <small></small>
+            </h1>
+        </section>
+
+        <div th:insert="pages/takeaway/takeawayContent"></div>
+    </div>
+</div>
+
+<div th:insert="fragments/footer :: footer"></div>
+
+</body>
+
+<script th:src="@{/js/jQuery/jquery-2.2.3.min.js}"></script>
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/moment/moment.min.js}"></script>
+<script th:src="@{/js/validator.min.js}"></script>
+<script th:src="@{/js/datetimepicker.min.js}"></script>
+<script th:src="@{/js/fastclick.js}"></script>
+
+<script th:src="@{/js/validator.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/bootstrap-table.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/locale/bootstrap-table-en-US.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/extensions/resizable/bootstrap-table-resizable.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/extensions/colResizable/colResizable-1.6.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/extensions/filter-control/bootstrap-table-filter-control.min.js}"></script>
+
+<script th:src="@{/js/tables/tableutil.js}"></script>
+<script th:src="@{/js/takeaway/takeawayOrderUtil.js}"></script>
+
+<script>
+
+</script>
+
+</html>

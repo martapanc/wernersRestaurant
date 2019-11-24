@@ -1,0 +1,44 @@
+[
+  {
+    "id": 41,
+    "version_number": 0,
+    "name": "Pizza",
+    "image": "/img/gastronomy/pizza-2.svg"
+  },
+  {
+    "id": 42,
+    "version_number": 0,
+    "name": "Burger",
+    "image": "/img/gastronomy/burger.svg"
+  },
+  {
+    "id": 43,
+    "version_number": 0,
+    "name": "Chinese",
+    "image": "/img/gastronomy/noodles.svg"
+  },
+  {
+    "id": 44,
+    "version_number": 0,
+    "name": "Salad",
+    "image": "/img/gastronomy/salad.svg"
+  },
+  {
+    "id": 45,
+    "version_number": 0,
+    "name": "Dessert",
+    "image": "/img/gastronomy/cupcake.svg"
+  },
+  {
+    "id": 46,
+    "version_number": 0,
+    "name": "Drink",
+    "image": "/img/gastronomy/glass-3.svg"
+  },
+  {
+    "id": 47,
+    "version_number": 0,
+    "name": "Japanese",
+    "image": "/img/gastronomy/sushi-1.svg"
+  }
+]

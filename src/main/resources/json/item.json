@@ -1,0 +1,370 @@
+[
+  {
+    "id": 47,
+    "version_number": 4,
+    "available": 1,
+    "name": "Margherita",
+    "price": 5.2,
+    "foodClass_id": 41
+  },
+  {
+    "id": 48,
+    "version_number": 3,
+    "available": 1,
+    "name": "Marescialla",
+    "price": 5.5,
+    "foodClass_id": 41
+  },
+  {
+    "id": 49,
+    "version_number": 2,
+    "available": 1,
+    "name": "Quattro stagioni",
+    "price": 7,
+    "foodClass_id": 41
+  },
+  {
+    "id": 50,
+    "version_number": 0,
+    "available": 1,
+    "name": "Tonno Cipolla",
+    "price": 6,
+    "foodClass_id": 41
+  },
+  {
+    "id": 51,
+    "version_number": 2,
+    "available": 1,
+    "name": "San Daniele",
+    "price": 9,
+    "foodClass_id": 41
+  },
+  {
+    "id": 52,
+    "version_number": 0,
+    "available": 1,
+    "name": "Primavera",
+    "price": 6.7,
+    "foodClass_id": 41
+  },
+  {
+    "id": 53,
+    "version_number": 0,
+    "available": 1,
+    "name": "Capricciosa",
+    "price": 7.5,
+    "foodClass_id": 41
+  },
+  {
+    "id": 54,
+    "version_number": 29,
+    "available": 1,
+    "name": "Hot Dog",
+    "price": 3.5,
+    "foodClass_id": 42
+  },
+  {
+    "id": 55,
+    "version_number": 9,
+    "available": 1,
+    "name": "Chicken Burger",
+    "price": 3.7,
+    "foodClass_id": 42
+  },
+  {
+    "id": 56,
+    "version_number": 11,
+    "available": 1,
+    "name": "Double Cheeseburger",
+    "price": 5.5,
+    "foodClass_id": 42
+  },
+  {
+    "id": 57,
+    "version_number": 9,
+    "available": 1,
+    "name": "McChicken",
+    "price": 4.8,
+    "foodClass_id": 42
+  },
+  {
+    "id": 58,
+    "version_number": 6,
+    "available": 1,
+    "name": "Burger Royal",
+    "price": 5.5,
+    "foodClass_id": 42
+  },
+  {
+    "id": 59,
+    "version_number": 6,
+    "available": 1,
+    "name": "Hawaiian Toast",
+    "price": 5,
+    "foodClass_id": 42
+  },
+  {
+    "id": 60,
+    "version_number": 5,
+    "available": 1,
+    "name": "BauernToast",
+    "price": 4.3,
+    "foodClass_id": 42
+  },
+  {
+    "id": 61,
+    "version_number": 3,
+    "available": 1,
+    "name": "Chinese noodles",
+    "price": 5.5,
+    "foodClass_id": 43
+  },
+  {
+    "id": 62,
+    "version_number": 4,
+    "available": 1,
+    "name": "Zhajiangmian",
+    "price": 6.7,
+    "foodClass_id": 43
+  },
+  {
+    "id": 63,
+    "version_number": 3,
+    "available": 1,
+    "name": "Fried Rice",
+    "price": 3.5,
+    "foodClass_id": 43
+  },
+  {
+    "id": 64,
+    "version_number": 6,
+    "available": 1,
+    "name": "Kung Pao chicken",
+    "price": 7.8,
+    "foodClass_id": 43
+  },
+  {
+    "id": 65,
+    "version_number": 1,
+    "available": 1,
+    "name": "Wonton",
+    "price": 6,
+    "foodClass_id": 43
+  },
+  {
+    "id": 66,
+    "version_number": 3,
+    "available": 1,
+    "name": "Zongzi",
+    "price": 6.7,
+    "foodClass_id": 43
+  },
+  {
+    "id": 67,
+    "version_number": 4,
+    "available": 1,
+    "name": "Peking Duck",
+    "price": 8,
+    "foodClass_id": 43
+  },
+  {
+    "id": 68,
+    "version_number": 2,
+    "available": 1,
+    "name": "Cesar Salad",
+    "price": 4.5,
+    "foodClass_id": 44
+  },
+  {
+    "id": 69,
+    "version_number": 0,
+    "available": 1,
+    "name": "Chicken Salad",
+    "price": 6.7,
+    "foodClass_id": 44
+  },
+  {
+    "id": 70,
+    "version_number": 2,
+    "available": 1,
+    "name": "Russian Salad",
+    "price": 5.5,
+    "foodClass_id": 44
+  },
+  {
+    "id": 71,
+    "version_number": 1,
+    "available": 1,
+    "name": "Tomato Salad",
+    "price": 6.8,
+    "foodClass_id": 44
+  },
+  {
+    "id": 72,
+    "version_number": 1,
+    "available": 1,
+    "name": "Potatoe Salad",
+    "price": 4.4,
+    "foodClass_id": 44
+  },
+  {
+    "id": 73,
+    "version_number": 2,
+    "available": 1,
+    "name": "Fresh Salad",
+    "price": 6.7,
+    "foodClass_id": 44
+  },
+  {
+    "id": 74,
+    "version_number": 0,
+    "available": 1,
+    "name": "Rice Salad",
+    "price": 4.2,
+    "foodClass_id": 44
+  },
+  {
+    "id": 75,
+    "version_number": 0,
+    "available": 1,
+    "name": "Brownies",
+    "price": 4.5,
+    "foodClass_id": 45
+  },
+  {
+    "id": 76,
+    "version_number": 3,
+    "available": 1,
+    "name": "Ice Cream",
+    "price": 6.7,
+    "foodClass_id": 45
+  },
+  {
+    "id": 77,
+    "version_number": 0,
+    "available": 1,
+    "name": "Surprise",
+    "price": 12,
+    "foodClass_id": 45
+  },
+  {
+    "id": 78,
+    "version_number": 3,
+    "available": 1,
+    "name": "Mousse",
+    "price": 6.8,
+    "foodClass_id": 45
+  },
+  {
+    "id": 79,
+    "version_number": 2,
+    "available": 1,
+    "name": "Sacher",
+    "price": 4.4,
+    "foodClass_id": 45
+  },
+  {
+    "id": 80,
+    "version_number": 2,
+    "available": 1,
+    "name": "Marshmallows",
+    "price": 6.7,
+    "foodClass_id": 45
+  },
+  {
+    "id": 81,
+    "version_number": 1,
+    "available": 1,
+    "name": "Affogato",
+    "price": 4.2,
+    "foodClass_id": 45
+  },
+  {
+    "id": 82,
+    "version_number": 1,
+    "available": 1,
+    "name": "Green Tea",
+    "price": 1.5,
+    "foodClass_id": 46
+  },
+  {
+    "id": 83,
+    "version_number": 1,
+    "available": 1,
+    "name": "Lemon Soda",
+    "price": 2.7,
+    "foodClass_id": 46
+  },
+  {
+    "id": 84,
+    "version_number": 1,
+    "available": 1,
+    "name": "Fizzy Water",
+    "price": 1.5,
+    "foodClass_id": 46
+  },
+  {
+    "id": 85,
+    "version_number": 2,
+    "available": 1,
+    "name": "Beer",
+    "price": 2.8,
+    "foodClass_id": 46
+  },
+  {
+    "id": 86,
+    "version_number": 2,
+    "available": 1,
+    "name": "Red Wine",
+    "price": 4.4,
+    "foodClass_id": 46
+  },
+  {
+    "id": 87,
+    "version_number": 1,
+    "available": 1,
+    "name": "White Wine",
+    "price": 3.7,
+    "foodClass_id": 46
+  },
+  {
+    "id": 88,
+    "version_number": 2,
+    "available": 1,
+    "name": "Sprite",
+    "price": 1.2,
+    "foodClass_id": 46
+  },
+  {
+    "id": 453,
+    "version_number": 1,
+    "available": 1,
+    "name": "Pancakes",
+    "price": 3.5,
+    "foodClass_id": 45
+  },
+  {
+    "id": 89,
+    "version_number": 1,
+    "available": 1,
+    "name": "Sushi",
+    "price": 5.8,
+    "foodClass_id": 47
+  },
+  {
+    "id": 90,
+    "version_number": 1,
+    "available": 1,
+    "name": "Sashimi",
+    "price": 3.9,
+    "foodClass_id": 47
+  },
+  {
+    "id": 91,
+    "version_number": 1,
+    "available": 1,
+    "name": "Tuna Maki",
+    "price": 4.2,
+    "foodClass_id": 47
+  }
+]

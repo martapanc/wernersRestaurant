@@ -25,4 +25,9 @@ public class HomeController {
     public String tableReservation() {
         return "pages/reservation/tableRes";
     }
+
+    @GetMapping("/takeaway")
+    public String takeaway() {
+        return "pages/takeaway/takeaway";
+    }
 }

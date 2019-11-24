@@ -1,0 +1,88 @@
+<section class="content">
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="box box-solid box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title order-minus">Take-Away Order</h3>
+                </div>
+
+                <form>
+                    <div class="box-body">
+                        <div class="food-menu col-md-3">
+                            <input type="hidden" id="session" value="${sessionScope.userSession.user.id}"/>
+                            <div class="btn-group btn-block btn-group-vertical" id="food-class-list">
+
+                            </div>
+
+                        </div>
+
+                        <div class="food-offers col-md-9">
+                            <div class="thmenu-header with-border">
+                                <h3>PIZZA</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="box box-primary">
+                                    <div class="box-body table-responsive">
+
+                                        <table id="item-table" data-toggle="table" data-url="/item" data-method="post"
+                                               data-content-type="application/x-www-form-urlencoded" data-query-params='action=list'
+                                               data-striped="true"
+                                               data-pagination="true" data-pagination-loop="false" data-page-size="10"
+                                               data-show-refresh="true" data-search="true"
+                                        >
+                                            <thead>
+                                            <tr>
+                                                <th data-field="id">Id</th>
+                                                <th data-field="name" data-sortable="true">Name</th>
+                                                <th data-field="price" data-sortable="true" data-align="right"
+                                                    data-formatter="priceFormatter">Price
+                                                </th>
+                                                <th data-field="action" data-formatter="actionFormatter" data-events="actionEvent">Add to
+                                                    Cart
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+
+                                    <div class="result"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="col-md-4 ">
+            <div class="box box-solid box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">
+                        <span class="fa fa-shopping-cart"></span> &nbsp; My Order
+                    </h3>
+                </div>
+
+                <div class="cart-form">
+                    <div class="box-body">
+                        <table class="table table-striped order-list"></table>
+                    </div>
+
+                    <div id="total-price-box" class="box-footer">
+                        <h4>
+                            <span class="pull-right total-price">Total price: &euro; 0.00</span>
+                        </h4>
+                    </div>
+                    <div class="box-footer">
+                        <button class="btn btn-primary" id="checkout-btn" disabled>Checkout</button>
+                        <button class="btn btn-warning" id="reset-btn">Cancel</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

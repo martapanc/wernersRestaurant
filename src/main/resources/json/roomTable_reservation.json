@@ -1,0 +1,42 @@
+[
+  {
+    "reservation_id": 95,
+    "room_table_id": 12
+  },
+  {
+    "reservation_id": 96,
+    "room_table_id": 12
+  },
+  {
+    "reservation_id": 97,
+    "room_table_id": 12
+  },
+  {
+    "reservation_id": 98,
+    "room_table_id": 12
+  },
+  {
+    "reservation_id": 99,
+    "room_table_id": 12
+  },
+  {
+    "reservation_id": 100,
+    "room_table_id": 12
+  },
+  {
+    "reservation_id": 101,
+    "room_table_id": 12
+  },
+  {
+    "reservation_id": 102,
+    "room_table_id": 12
+  },
+  {
+    "reservation_id": 103,
+    "room_table_id": 12
+  },
+  {
+    "reservation_id": 104,
+    "room_table_id": 12
+  }
+]
