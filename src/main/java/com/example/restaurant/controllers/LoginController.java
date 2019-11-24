@@ -30,16 +30,13 @@ public class LoginController {
         User user = users.stream().filter(u -> u.getEmail().equals(email)).findFirst().orElse(null);
 
         if (email != null && password != null) {
-            User exampleEntity = new User();
-            exampleEntity.setEmail(email);
-
             if (user != null && BCrypt.checkpw(password, user.getPassword())) {
                 UserSession userSession = new UserSession();
                 userSession.setUser(user);
                 userSession.setLoginTime(new Date());
                 session.setAttribute("userSession", userSession);
 
-                return new ModelAndView("redirect:/homepage");
+                return new ModelAndView("redirect:/dashboard");
             }
 
             redirectAttributes.addFlashAttribute("ERROR_MESSAGE", "Login failed. Please check your credentials, or try to reset your password.");
@@ -48,5 +45,11 @@ public class LoginController {
 
         redirectAttributes.addFlashAttribute("ERROR_MESSAGE", "Login failed: please retry.");
         return new ModelAndView("redirect:/login");
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public ModelAndView logout(HttpSession session) {
+        session.invalidate();
+        return new ModelAndView("redirect:/homepage");
     }
 }

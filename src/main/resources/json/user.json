@@ -2,7 +2,7 @@
   {
     "id": 6,
     "version_number": 227,
-    "avatar": "dist/img/gusteau160x160.jpg",
+    "avatar": "/img/avatars/gusteau160x160.jpg",
     "billing_address": "999 Main St, Charleston, SC",
     "creation_date": "2017-01-08 15:47:57",
     "email": "overlord@wpb.it",
@@ -10,13 +10,13 @@
     "password": "$2a$10$Labp3/QUKiLEG4WiQahrXe1bbCfhXEHqQ.xKcXnoaDRfWRM5ZUAmm",
     "phone_number": "0522124554",
     "points": 0,
-    "vip_status": 0,
+    "vip_status": false,
     "role_id": 5
   },
   {
     "id": 7,
     "version_number": 2,
-    "avatar": "dist/img/avatar2.png",
+    "avatar": "/img/avatars/avatar2.png",
     "billing_address": "Somewhere over the rainbow",
     "creation_date": "2017-01-08 15:47:57",
     "email": "admin@wpb.it",
@@ -24,13 +24,13 @@
     "password": "$2a$10$qH7CkN7xnqHDh8HWz/YtgOMXt3AxaB672c5vieusO4u0BrXw1vu0G",
     "phone_number": 1241251243,
     "points": 0,
-    "vip_status": 0,
+    "vip_status": false,
     "role_id": 1
   },
   {
     "id": 8,
     "version_number": 2,
-    "avatar": "dist/img/avatar3.png",
+    "avatar": "/img/avatars/avatar3.png",
     "billing_address": "Via Carducci 7, Bolzano",
     "creation_date": "2017-01-08 15:47:58",
     "email": "marta@wpb.it",
@@ -38,13 +38,13 @@
     "password": "$2a$10$KEqpDOakVx4OqwIxQMD59O4EGVYRvgPtWPysbq7QicOJ3q07vtaVW",
     "phone_number": "0522332720",
     "points": 0,
-    "vip_status": 0,
+    "vip_status": false,
     "role_id": 3
   },
   {
     "id": 9,
     "version_number": 0,
-    "avatar": "dist/img/avatar4.png",
+    "avatar": "/img/avatars/avatar4.png",
     "billing_address": "NULL",
     "creation_date": "2017-01-08 15:47:58",
     "email": "werner@wpb.it",
@@ -52,13 +52,13 @@
     "password": "$2a$10$UYsMdy4kwNVAoeMvWneHXupEr0NNZKcZIEiZ4OBUOyNF5ZnTyZ1NW",
     "phone_number": "NULL",
     "points": 0,
-    "vip_status": 0,
+    "vip_status": false,
     "role_id": 2
   },
   {
     "id": 10,
     "version_number": 13,
-    "avatar": "dist/img/avatar1.png",
+    "avatar": "/img/avatars/avatar1.png",
     "billing_address": "Via Weggenstein 12123, Bolzano",
     "creation_date": "2017-01-08 15:47:58",
     "email": "giulia@wpb.it",
@@ -66,13 +66,13 @@
     "password": "$2a$10$/WhsvD5OIFAHzSJPG/20weGyVMX1z.dgo4F.YzGSYZUtPmR89No3O",
     "phone_number": 1251248124,
     "points": 0,
-    "vip_status": 0,
+    "vip_status": false,
     "role_id": 4
   },
   {
     "id": 227,
     "version_number": 2,
-    "avatar": "dist/img/avatar5.png",
+    "avatar": "/img/avatars/avatar5.png",
     "billing_address": "NULL",
     "creation_date": "2017-01-09 14:45:26",
     "email": "giovannino@yahoo.it",
@@ -80,13 +80,13 @@
     "password": "$2a$10$bU5C5heVS6bY7bBrO0uF9eSeHqUAqZfC8v2IS6Lisvc0GcHU6/S4O",
     "phone_number": "NULL",
     "points": 0,
-    "vip_status": 0,
+    "vip_status": false,
     "role_id": 4
   },
   {
     "id": 388,
     "version_number": 0,
-    "avatar": "dist/img/gusteau160x160.jpg",
+    "avatar": "/img/avatars/gusteau160x160.jpg",
     "billing_address": "NULL",
     "creation_date": "2017-01-18 19:02:10",
     "email": "mbianchi@email.it",
@@ -94,13 +94,13 @@
     "password": "$2a$10$qHsjGw80LjliNSd4KP35zOCX1b83YT/7AOK8c9UT81KwidXRv0AVm",
     "phone_number": "NULL",
     "points": 0,
-    "vip_status": 0,
+    "vip_status": false,
     "role_id": 4
   },
   {
     "id": 451,
     "version_number": 6,
-    "avatar": "dist/img/gusteau160x160.jpg",
+    "avatar": "/img/avatars/gusteau160x160.jpg",
     "billing_address": "221b Baker St, London UK",
     "creation_date": "2017-01-21 18:36:52",
     "email": "sholmes@email.co.uk",
@@ -108,13 +108,13 @@
     "password": "$2a$10$pWdckKUdTeiPzl7ZlaEYmOUw/1qxihVzdMhkM5Wt9M1Br7ncVkMxS",
     "phone_number": 2362352523,
     "points": 0,
-    "vip_status": 0,
+    "vip_status": false,
     "role_id": 4
   },
   {
     "id": 483,
     "version_number": 5,
-    "avatar": "dist/img/avatar1.png",
+    "avatar": "/img/avatars/avatar1.png",
     "billing_address": "Piazza del Duomo 23, Bolzano",
     "creation_date": "2016-09-29 12:41:11",
     "email": "mrossi@gmail.com",
@@ -122,13 +122,13 @@
     "password": "$2a$10$U0.U7tdZVeralp65bRuIZ.qkE7k2HXX4ziFw8vUs4UvgfUcfUr9h6",
     "phone_number": 5124089898,
     "points": 0,
-    "vip_status": 0,
+    "vip_status": false,
     "role_id": 4
   },
   {
     "id": 562,
     "version_number": 7,
-    "avatar": "dist/img/avatar3.png",
+    "avatar": "/img/avatars/avatar3.png",
     "billing_address": "Via Carducci 7, Bolzano",
     "creation_date": "2017-01-23 17:27:16",
     "email": "marta.panc@gmail.com",
@@ -136,13 +136,13 @@
     "password": "$2a$10$suZwiRWt6hCvgUIfXal7feOPrgCIXhlsXBl2GekBCpB79k9u8y2Si",
     "phone_number": 3284465452,
     "points": 0,
-    "vip_status": 0,
+    "vip_status": false,
     "role_id": 4
   },
   {
     "id": 570,
     "version_number": 2,
-    "avatar": "dist/img/avatar2.png",
+    "avatar": "/img/avatars/avatar2.png",
     "billing_address": "NULL",
     "creation_date": "2017-01-23 19:22:17",
     "email": "marta.pancaldi@stud-inf.unibz.it",
@@ -150,7 +150,7 @@
     "password": "$2a$10$Btj1V7wNbQYwvkJtO9w7h.9q9kV9Q1EE8Rge42q28DyOoXV09Rp3a",
     "phone_number": "NULL",
     "points": 0,
-    "vip_status": 0,
+    "vip_status": false,
     "role_id": 4
   }
 ]

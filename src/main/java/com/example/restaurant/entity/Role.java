@@ -13,7 +13,26 @@ public class Role {
     }
 
     public enum RoleEnum {
-        ADMIN, DBMANAGER, WAITER, CUSTOMER, OVERLORD
+        ADMIN(1), DBMANAGER(3), WAITER(2), CUSTOMER(4), OVERLORD(5);
+
+        public final int roleId;
+
+        RoleEnum(int roleId) {
+            this.roleId = roleId;
+        }
+
+        public static RoleEnum getEnumFromId(int id) {
+            for (RoleEnum e : values()) {
+                if (e.roleId == id) {
+                    return e;
+                }
+            }
+            return null;
+        }
+
     }
 
+    public enum Section {
+        SCHEDULER, TABLES, CUSTOMER, DASHBOARD, CALENDAR
+    }
 }

@@ -1,0 +1,7 @@
+.navbar-nav>li>.dropdown-menu {
+    background-color: white;
+}
+
+.glyphicon-plus {
+    color: #3C8DBC !important;
+}
