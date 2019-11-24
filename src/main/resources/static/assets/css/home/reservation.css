@@ -1,0 +1,14 @@
+
+.footer_top {
+    padding: 10px;
+}
+
+.content {
+    padding: 65px 10px 10px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.box-body {
+    min-height: 360px;
+}

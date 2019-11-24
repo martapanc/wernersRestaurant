@@ -20,4 +20,9 @@ public class HomeController {
     public String documentation() {
         return "pages/documentation/docs";
     }
+
+    @GetMapping("/reservation")
+    public String tableReservation() {
+        return "pages/reservation/tableRes";
+    }
 }
