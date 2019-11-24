@@ -20,9 +20,6 @@ public class FoodClassController {
     @RequestMapping(value = "/foodClass", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
     @ResponseBody
     public String listFoodClasses() {
-
-        String input = Utils.readInput("src/main/resources/json/foodClass.json");
-
-        return input;
+        return Utils.readInput("src/main/resources/json/foodClass.json");
     }
 }

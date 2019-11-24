@@ -12,7 +12,6 @@ public class ItemController {
     @RequestMapping(value = "/item", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
     @ResponseBody
     public String listItemsForFoodClass() {
-
         return Utils.readInput("src/main/resources/json/item.json");
     }
 }

@@ -31,11 +31,11 @@
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to your personal account</p>
-<!--        <c:if test="${message != null}">-->
-<!--            <div class="alert alert-danger text-center" id="message-div">-->
-<!--                ${message}-->
-<!--            </div>-->
-<!--        </c:if>-->
+        <div th:if="${ERROR_MESSAGE != null}">
+            <div class="alert alert-danger text-center" id="message-div">
+                <span th:text="${ERROR_MESSAGE}"></span>
+            </div>
+        </div>
         <form action="/login" method="post" data-toggle="validator">
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" name="email" required placeholder="Email"> <span
