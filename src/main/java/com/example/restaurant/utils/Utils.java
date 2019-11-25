@@ -6,6 +6,8 @@ import java.io.IOException;
 
 public class Utils {
 
+    public static final String JSON_UTF_8 = "application/json; charset=utf-8";
+
     public static String readInput(String inputFile) {
 
         BufferedReader reader;

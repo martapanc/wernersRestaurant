@@ -20,13 +20,14 @@ import java.util.List;
 @Controller
 public class LoginController {
 
+    private static final String USER_JSON = "src/main/resources/json/user.json";
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView login(@RequestParam String email, @RequestParam String password, HttpSession session, RedirectAttributes redirectAttributes) {
 
-        String userJson = Utils.readInput("src/main/resources/json/user.json");
+        String userJson = Utils.readInput(USER_JSON);
 
-        List<User> users = new Gson().fromJson(userJson, new TypeToken<List<User>>() {
-        }.getType());
+        List<User> users = new Gson().fromJson(userJson, new TypeToken<List<User>>() {}.getType());
         User user = users.stream().filter(u -> u.getEmail().equals(email)).findFirst().orElse(null);
 
         if (email != null && password != null) {

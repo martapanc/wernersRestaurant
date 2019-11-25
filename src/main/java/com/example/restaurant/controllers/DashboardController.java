@@ -14,7 +14,7 @@ public class DashboardController {
     @GetMapping("/dashboard")
     public String dashboard(HttpSession session) {
 
-        if (session.getAttribute("userSession") != null) {
+        if (AccessManager.isUserLoggedIn(session)) {
             session.setAttribute("dashboard", AccessManager.isAllowed(session, Role.Section.DASHBOARD));
             session.setAttribute("tables", AccessManager.isAllowed(session, Role.Section.TABLES));
             session.setAttribute("customer", AccessManager.isAllowed(session, Role.Section.CUSTOMER));

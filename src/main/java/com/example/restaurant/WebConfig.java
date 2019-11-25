@@ -20,5 +20,4 @@ public class WebConfig implements WebMvcConfigurer {
                         "classpath:/static/assets/css/",
                         "classpath:/static/assets/js/");
     }
-
 }

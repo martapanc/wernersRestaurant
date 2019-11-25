@@ -6,12 +6,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import static com.example.restaurant.utils.Utils.JSON_UTF_8;
+
 @Controller
 public class ItemController {
 
-    @RequestMapping(value = "/item", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
+    private static final String ITEM_JSON = "src/main/resources/json/item.json";
+
+    @RequestMapping(value = "/item", method = RequestMethod.POST, produces = JSON_UTF_8)
     @ResponseBody
     public String listItemsForFoodClass() {
-        return Utils.readInput("src/main/resources/json/item.json");
+        return Utils.readInput(ITEM_JSON);
     }
 }

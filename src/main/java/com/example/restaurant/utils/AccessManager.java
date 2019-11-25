@@ -13,8 +13,7 @@ public class AccessManager {
 
     private static HashMap<RoleEnum, HashSet<Section>> permissions = new HashMap<>();
 
-    public static void definePermissions() {
-
+    private static void definePermissions() {
         HashSet<Section> adminSections = new HashSet<>();
         adminSections.add(Section.TABLES);
         adminSections.add(Section.SCHEDULER);
@@ -44,12 +43,6 @@ public class AccessManager {
         permissions.put(RoleEnum.OVERLORD, overlordSections);
     }
 
-//    public boolean isAllowed(HttpSession session, Section section) {
-//        User user = ((UserSession) session.getAttribute("userSession")).getUser();
-//        RoleEnum roleName = user.getRole().getName();
-//        return permissions.get(roleName).contains(section);
-//    }
-
     public static boolean isAllowed(HttpSession session, Section section) {
         definePermissions();
 
@@ -60,5 +53,9 @@ public class AccessManager {
 
     public static User getUserData(HttpSession session) {
         return ((UserSession) session.getAttribute("userSession")).getUser();
+    }
+
+    public static boolean isUserLoggedIn(HttpSession session) {
+        return session.getAttribute("userSession") != null;
     }
 }

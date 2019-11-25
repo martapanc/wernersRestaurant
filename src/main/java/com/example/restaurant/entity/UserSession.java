@@ -1,25 +1,12 @@
 package com.example.restaurant.entity;
 
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class UserSession {
-	
+
     private User user;
     private Date loginTime;
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Date getLoginTime() {
-        return loginTime;
-    }
-
-    public void setLoginTime(Date loginTime) {
-        this.loginTime = loginTime;
-    }
 }
