@@ -18,7 +18,7 @@ public class User {
     @SerializedName("phone_number") private String phoneNumber;
     @SerializedName("vip_status") private boolean vipStatus;
     private String avatar;
-    @SerializedName("creation_date")private Timestamp creationDate;
+    private Timestamp creationDate;
 
     public void setRole(int id) {
         this.role = Role.RoleEnum.getEnumFromId(id);

@@ -1,5 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
+<link th:href="@{/css/dashboard/dashboard.css}" rel="stylesheet" type="text/css">
+
+
 <aside class="main-sidebar">
     <section class="sidebar">
         <div class="user-panel">
@@ -29,7 +32,7 @@
 
             <div th:if="${session.dashboard}">
                 <li id="dashboard-menu" class="treeview">
-                    <a href="/dashboard">
+                    <a href="/dashboard" class="menu-item">
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
@@ -38,7 +41,7 @@
 
             <div th:if="${session.scheduler}">
                 <li id="scheduler-menu">
-                    <a href="${pageContext.request.contextPath}/pages/scheduler.jsp">
+                    <a href="${pageContext.request.contextPath}/pages/scheduler.jsp" class="menu-item">
                         <i class="fa fa-clock-o"></i>
                         <span>Scheduler</span>
                     </a>
@@ -47,7 +50,7 @@
 
             <div th:if="${session.tables}">
                 <li id="table-menu" class="treeview">
-                    <a href="">
+                    <a href="" class="menu-item">
                         <i class="fa fa-table"></i>
                         <span>Tables</span>
                         <span class="pull-right-container">
@@ -97,13 +100,13 @@
 
             <div th:if="${session.customer}">
                 <li id="reservation-menu">
-                    <a href="${pageContext.request.contextPath}/pages/customer/tableReservation.jsp">
+                    <a href="${pageContext.request.contextPath}/pages/customer/tableReservation.jsp" class="menu-item">
                         <i class="fa fa-cutlery"></i>
                         <span>Table Reservation</span>
                     </a>
                 </li>
                 <li id="ta-order-menu">
-                    <a href="${pageContext.request.contextPath}/pages/customer/takeawayOrder.jsp">
+                    <a href="${pageContext.request.contextPath}/pages/customer/takeawayOrder.jsp" class="menu-item">
                         <i class="fa fa-paper-plane-o"></i>
                         <span>Take-Away Order</span>
                     </a>
