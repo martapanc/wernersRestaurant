@@ -66,7 +66,7 @@
 						<div id="slides">
 							<ul class="slides-container">
 
-								<li><img src="dist/img/fast-food.jpg" alt="img">
+								<li><img src="/img/slider/fast-food.jpg" alt="img">
 									<div class="slider_caption">
 										<h2>Taste the quality</h2>
 										<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
@@ -75,7 +75,7 @@
 										<a class="slider_btn" href="#">Know More</a>
 									</div></li>
 								<!-- Start single slider-->
-								<li><img src="dist/img/restaurant-2.jpg" alt="img">
+								<li><img src="/img/slider/restaurant-2.jpg" alt="img">
 									<div class="slider_caption">
 										<h2>Largest &amp; Beautiful Environment</h2>
 										<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
@@ -83,7 +83,7 @@
 										<a class="slider_btn" href="#">Know More</a>
 									</div></li>
 								<!-- Start single slider-->
-								<li><img src="dist/img/photo1.png" alt="img">
+								<li><img src="/img/slider/photo1.png" alt="img">
 									<div class="slider_caption">
 										<h2>Find out you in better way</h2>
 										<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
@@ -250,7 +250,7 @@
 									</div>
 								</div>
 								<div class="box-body">
-									<table id="item-table" data-toggle="table" data-url="${pageContext.request.contextPath}/item" data-method="post"
+									<table id="item-table" data-toggle="table" data-url="/item-classes" data-method="post"
 										data-content-type="application/x-www-form-urlencoded" data-query-params='action=list' data-striped="true"
 										data-pagination="true" data-pagination-loop="false" data-page-size="8" data-resizable="false" data-sort-name="id"
 										data-sort-order="desc" data-page-list="[8]">
@@ -258,16 +258,15 @@
 											<tr>
 												<th data-field="id" data-sortable="true" data-width="8%">Id</th>
 												<th data-field="name" data-sortable="true" data-width="30%">Name</th>
-												<th data-field="foodClass.name" data-sortable="true">Food class</th>
+												<th data-field="foodClass" data-sortable="true">Food class</th>
 												<th data-field="price" data-sortable="true" data-align="right" data-formatter="priceFormatter">Price</th>
-												<th data-field="available" data-sortable="true" data-sorter="boolSorter" data-formatter="boolFormatter"
-													data-align="center">Availability</th>
+												<th data-field="available" data-sortable="true" data-sorter="boolSorter" data-formatter="boolFormatter" data-align="center">Availability</th>
 											</tr>
 										</thead>
 									</table>
 								</div>
 								<div class="box-footer text-center">
-									<a href="${pageContext.request.contextPath}/pages/tables/item.jsp" class="uppercase">View All Items</a>
+									<a href="/tables/items" class="uppercase">View All Items</a>
 								</div>
 							</div>
 						</div>
@@ -289,7 +288,7 @@
 									</ul>
 								</div>
 								<div class="box-footer text-center">
-									<a href="${pageContext.request.contextPath}/pages/tables/user.jsp" class="uppercase">View All Users</a>
+									<a href="/tables/user" class="uppercase">View All Users</a>
 								</div>
 							</div>
 						</div>
