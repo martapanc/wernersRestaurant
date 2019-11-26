@@ -126,7 +126,7 @@
     "comment": "test 235235253",
     "cost": 19.200000762939453,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "Umberto Pancaldi",
     "phone_number": 1234512345,
     "order_date": "2017-01-18 20:05:09"
@@ -138,7 +138,7 @@
     "comment": "",
     "cost": 10.300000190734863,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "Nino Pancaldi",
     "phone_number": 1212121211,
     "order_date": "2017-01-18 20:05:09"
@@ -150,7 +150,7 @@
     "comment": 124124,
     "cost": 10.5,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "Elisabetta Morini",
     "phone_number": 1125125161,
     "order_date": "2017-01-18 20:05:09"
@@ -162,7 +162,7 @@
     "comment": "",
     "cost": 10.5,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "Greg Lestrade",
     "phone_number": 3513713522,
     "order_date": "2017-01-18 20:08:13"
@@ -210,7 +210,7 @@
     "comment": "comment 21123",
     "cost": 10.5,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "Martha Hudson",
     "phone_number": 1125167137,
     "order_date": "2017-01-18 20:13:15"
@@ -246,7 +246,7 @@
     "comment": "test 34534976",
     "cost": 11.100000381469727,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "Walter White",
     "phone_number": 3463424635,
     "order_date": "2017-01-20 18:38:16"
@@ -318,7 +318,7 @@
     "comment": "No tomato on the Margherita, please",
     "cost": 29.899999618530273,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "John Doe",
     "phone_number": 1242151253,
     "order_date": "2016-11-04 14:36:49"
@@ -330,7 +330,7 @@
     "comment": "",
     "cost": 13.300000190734863,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "John Smith",
     "phone_number": 1234512345,
     "order_date": "2016-11-04 14:59:24"
@@ -342,7 +342,7 @@
     "comment": "",
     "cost": 36.79999923706055,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "Eurus Holmes",
     "phone_number": 1224124124,
     "order_date": "2016-11-04 15:00:21"
@@ -354,7 +354,7 @@
     "comment": "MISS ME?",
     "cost": 73.4000015258789,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "James Moriarty",
     "phone_number": 2141244124,
     "order_date": "2016-11-04 15:01:56"
@@ -426,7 +426,7 @@
     "comment": "edfehhdeh",
     "cost": 3.5,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "John Smith",
     "phone_number": 3453453453,
     "order_date": "2017-01-23 16:06:44"
@@ -436,9 +436,9 @@
     "version_number": 0,
     "address": "221B Baker St, London, UK",
     "comment": "rfdrge",
-    "cost": 3.5,
+    "cost": 3.51,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "John Smith",
     "phone_number": 2523623634,
     "order_date": "2017-01-23 16:07:24"
@@ -450,7 +450,7 @@
     "comment": "The game is on",
     "cost": 35.79999923706055,
     "status": "pronto",
-    "guest_id": "NULL",
+    "guest_id": 0,
     "customer_name": "John Watson",
     "phone_number": 1234512345,
     "order_date": "2017-01-24 11:08:38"

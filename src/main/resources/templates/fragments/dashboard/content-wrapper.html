@@ -365,18 +365,18 @@
 						<div class="box-body">
 							<div class="table-responsive">
 								<table id="res-table" data-toggle="table" data-url="/latest-reservations" data-method="post"
-									data-query-params='action=list' data-content-type="application/x-www-form-urlencoded" data-striped="true"
-									data-pagination="true" data-pagination-loop="true" data-page-size="10" data-resizable="false" data-sort-name="id"
-									data-sort-order="desc" data-page-list="[10]">
+									   data-query-params='action=list' data-content-type="application/x-www-form-urlencoded" data-striped="true"
+									   data-pagination="true" data-pagination-loop="true" data-page-size="10" data-resizable="false" data-sort-name="id"
+									   data-sort-order="desc" data-page-list="[10]">
 									<thead>
-										<tr>
-											<th data-field="id" data-sortable="true">Id</th>
-											<th data-field="start_date" data-sortable="true">Start Date</th>
-											<th data-field="end_date" data-sortable="true">End Date</th>
-											<th data-field="user_id" data-sortable="true">User Id</th>
-											<th data-field="customer_name" data-sortable="true">Customer Name</th>
-											<th data-field="comment" data-sortable="true">Comment</th>
-										</tr>
+									<tr>
+										<th data-field="id" data-sortable="true">Id</th>
+										<th data-field="start_date" data-sortable="true">Start Date</th>
+										<th data-field="end_date" data-sortable="true">End Date</th>
+										<th data-field="user_id" data-sortable="true">User Id</th>
+										<th data-field="customer_name" data-sortable="true">Customer Name</th>
+										<th data-field="comment" data-sortable="true">Comment</th>
+									</tr>
 									</thead>
 								</table>
 							</div>
@@ -388,7 +388,6 @@
 						</div>
 						<!-- /.box-footer -->
 					</div>
-					<!-- /.box LATEST TABLE RESERVATIONS-->
 
 					<!-- TABLE: LATEST TAKEAWAY ORDERS -->
 					<div class="box box-warning">
@@ -403,21 +402,21 @@
 						<!-- /.box-header -->
 						<div class="box-body">
 							<div class="table-responsive">
-								<table id="ta-table" data-detail-view="true" data-striped="true" data-url="/latest-takeaway-orders"
-									data-method="post" data-query-params='action=list' data-content-type="application/x-www-form-urlencoded"
-									data-pagination="true" data-pagination-loop="false" data-page-size="10" data-resizable="false" data-sort-name="id"
-									data-sort-order="desc" data-detail-formatter="detailFormatter" data-page-list="[10]">
+								<table id="ta-table" data-toggle="table" data-url="/latest-takeaway-orders" data-method="post"
+									   data-query-params='action=list' data-content-type="application/x-www-form-urlencoded" data-striped="true"
+									   data-pagination="true" data-pagination-loop="true" data-page-size="10" data-resizable="false" data-sort-name="id"
+									   data-sort-order="desc" data-page-list="[10]" data-detail-formatter="detailFormatter">
 									<thead>
-										<tr>
-											<th data-field="order_id" data-sortable="true">ID</th>
-											<th data-field="orderDate" data-sortable="true">Order Date</th>
-											<th data-field="address" data-sortable="true">Address</th>
-											<th data-field="phoneNumber" data-sortable="true">Phone Number</th>
-											<th data-field="guest.id" data-sortable="true">Guest ID</th>
-											<th data-field="cost" data-sortable="true">Cost</th>
-											<th data-field="status" data-sortable="true">Status</th>
-											<th data-field="comment" data-sortable="true">Comment</th>
-										</tr>
+									<tr>
+										<th data-field="id" data-sortable="true">ID</th>
+										<th data-field="order_date" data-sortable="true">Order Date</th>
+										<th data-field="address" data-sortable="true">Address</th>
+										<th data-field="phone_number" data-sortable="true">Phone Number</th>
+										<th data-field="guest_id" data-sortable="true">Guest ID</th>
+										<th data-field="formattedCost" data-sortable="true">Cost</th>
+										<th data-field="status" data-sortable="true">Status</th>
+										<th data-field="comment" data-sortable="true">Comment</th>
+									</tr>
 									</thead>
 								</table>
 							</div>
@@ -425,7 +424,7 @@
 						</div>
 						<!-- /.box-body -->
 						<div class="box-footer text-center">
-							<a href="${pageContext.request.contextPath}/pages/tables/order.jsp" class="uppercase">View All Takeaway Orders</a>
+							<a href="/tables/takeaway" class="uppercase">View All Takeaway Orders</a>
 						</div>
 						<!-- /.box-footer -->
 					</div>
