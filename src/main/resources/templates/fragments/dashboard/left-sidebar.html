@@ -1,8 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<link th:href="@{/css/dashboard/dashboard.css}" rel="stylesheet" type="text/css">
-
-
 <aside class="main-sidebar">
     <section class="sidebar">
         <div class="user-panel">
@@ -30,94 +27,88 @@
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
 
-            <div th:if="${session.dashboard}">
-                <li id="dashboard-menu" class="treeview">
-                    <a href="/dashboard" class="menu-item">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-            </div>
+            <li th:if="${session.dashboard}" id="dashboard-menu" class="treeview">
+                <a href="/dashboard">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
 
-            <div th:if="${session.scheduler}">
-                <li id="scheduler-menu">
-                    <a href="${pageContext.request.contextPath}/pages/scheduler.jsp" class="menu-item">
-                        <i class="fa fa-clock-o"></i>
-                        <span>Scheduler</span>
-                    </a>
-                </li>
-            </div>
+            <li th:if="${session.scheduler}" id="scheduler-menu">
+                <a href="${pageContext.request.contextPath}/pages/scheduler.jsp">
+                    <i class="fa fa-clock-o"></i>
+                    <span>Scheduler</span>
+                </a>
+            </li>
 
-            <div th:if="${session.tables}">
-                <li id="table-menu" class="treeview">
-                    <a href="" class="menu-item">
-                        <i class="fa fa-table"></i>
-                        <span>Tables</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li id="table-menu-fc">
-                            <a href="/tables/foodClass">
-                                <i class="fa fa-apple"></i>
-                                Food Categories
-                            </a>
-                        </li>
-                        <li id="table-menu-item">
-                            <a href="/tables/items">
-                                <i class="fa fa-cube"></i>
-                                Items
-                            </a>
-                        </li>
-                        <li id="table-menu-order">
-                            <a href="/tables/takeaway">
-                                <i class="fa fa-archive"></i>
-                                Takeaway Orders
-                            </a>
-                        </li>
-                        <li id="table-menu-reservation">
-                            <a href="/tables/reservations">
-                                <i class="fa fa-book"></i>
-                                Reservations
-                            </a>
-                        </li>
-                        <li id="table-menu-table">
-                            <a href="/tables/restaurant">
-                                <i class="fa fa-cutlery"></i>
-                                Restaurant Tables
-                            </a>
-                        </li>
-                        <li id="table-menu-user">
-                            <a href="/tables/users">
-                                <i class="fa fa-user"></i>
-                                Users
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </div>
+            <li th:if="${session.tables}" id="table-menu" class="treeview">
+                <a href="/">
+                    <i class="fa fa-table"></i>
+                    <span>Tables</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li id="table-menu-fc">
+                        <a href="/tables/foodClass">
+                            <i class="fa fa-apple"></i>
+                            Food Categories
+                        </a>
+                    </li>
+                    <li id="table-menu-item">
+                        <a href="/tables/items">
+                            <i class="fa fa-cube"></i>
+                            Items
+                        </a>
+                    </li>
+                    <li id="table-menu-order">
+                        <a href="/tables/takeaway">
+                            <i class="fa fa-archive"></i>
+                            Takeaway Orders
+                        </a>
+                    </li>
+                    <li id="table-menu-reservation">
+                        <a href="/tables/reservations">
+                            <i class="fa fa-book"></i>
+                            Reservations
+                        </a>
+                    </li>
+                    <li id="table-menu-table">
+                        <a href="/tables/restaurant">
+                            <i class="fa fa-cutlery"></i>
+                            Restaurant Tables
+                        </a>
+                    </li>
+                    <li id="table-menu-user">
+                        <a href="/tables/users">
+                            <i class="fa fa-user"></i>
+                            Users
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
-            <div th:if="${session.customer}">
+            <th:block th:if="${session.customer}">
                 <li id="reservation-menu">
-                    <a href="/dashboard/tableReservation" class="menu-item">
+                    <a href="/dashboard/tableReservation">
                         <i class="fa fa-cutlery"></i>
-                        <span>Table Reservation</span>
+                        <span class="sidebar-title">Table Reservation</span>
                     </a>
                 </li>
                 <li id="ta-order-menu">
-                    <a href="/dashboard/takeawayOrder" class="menu-item">
+                    <a href="/dashboard/takeawayOrder">
                         <i class="fa fa-paper-plane-o"></i>
-                        <span>Take-Away Order</span>
+                        <span class="sidebar-title">Take-Away Order</span>
                     </a>
                 </li>
-            </div>
+            </th:block>
 
             <li class="header">HELP</li>
             <li>
                 <a href="/dashboard/documentation">
                     <i class="fa fa-book"></i>
-                    <span>Documentation</span>
+                    <span class="sidebar-title">Documentation</span>
                 </a>
             </li>
         </ul>
