@@ -13,7 +13,7 @@ public class ReservationController {
 
     private static final String RESERVATION_JSON = "src/main/resources/json/reservation.json";
 
-    @RequestMapping(value = "/item", method = RequestMethod.POST, produces = JSON_UTF_8)
+    @RequestMapping(value = "/reservation", method = RequestMethod.POST, produces = JSON_UTF_8)
     @ResponseBody
     public String listReservations() {
         return Utils.readInput(RESERVATION_JSON);
