@@ -5,6 +5,8 @@ import com.example.restaurant.entity.User;
 import com.example.restaurant.utils.AccessManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 
@@ -26,6 +28,30 @@ public class DashboardController {
             session.setAttribute("name", user.getFirstName() + " " + user.getLastName());
 
             return "dashboard/index";
+        }
+
+        return "redirect:/homepage";
+    }
+
+    @GetMapping("/tables/{tableName}")
+    public String foodClasses(HttpSession session, @PathVariable("tableName") String tableName) {
+        if (AccessManager.isUserLoggedIn(session) && AccessManager.isAllowed(session, Role.Section.TABLES)) {
+            switch (tableName) {
+                case "foodClass":
+                    return "dashboard/pages/foodClassTable";
+                case "items":
+                    return "dashboard/pages/itemTable";
+                case "reservations":
+                    return "dashboard/pages/reservationTable";
+                case "restaurant":
+                    return "dashboard/pages/restaurantTablesTable";
+                case "takeaway":
+                    return "dashboard/pages/takeawayOrderTable";
+                case "users":
+                    return "dashboard/pages/userTable";
+                default:
+                    return "dashboard/index";
+            }
         }
 
         return "redirect:/homepage";
