@@ -364,17 +364,17 @@
 						<!-- /.box-header -->
 						<div class="box-body">
 							<div class="table-responsive">
-								<table id="res-table" data-toggle="table" data-url="${pageContext.request.contextPath}/reservation" data-method="post"
+								<table id="res-table" data-toggle="table" data-url="/latest-reservations" data-method="post"
 									data-query-params='action=list' data-content-type="application/x-www-form-urlencoded" data-striped="true"
 									data-pagination="true" data-pagination-loop="true" data-page-size="10" data-resizable="false" data-sort-name="id"
 									data-sort-order="desc" data-page-list="[10]">
 									<thead>
 										<tr>
 											<th data-field="id" data-sortable="true">Id</th>
-											<th data-field="startDate" data-sortable="true">Start Date</th>
-											<th data-field="endDate" data-sortable="true">End Date</th>
-											<th data-field="user.id" data-sortable="true">User Id</th>
-											<th data-field="customerName" data-sortable="true">Customer Name</th>
+											<th data-field="start_date" data-sortable="true">Start Date</th>
+											<th data-field="end_date" data-sortable="true">End Date</th>
+											<th data-field="user_id" data-sortable="true">User Id</th>
+											<th data-field="customer_name" data-sortable="true">Customer Name</th>
 											<th data-field="comment" data-sortable="true">Comment</th>
 										</tr>
 									</thead>
@@ -384,7 +384,7 @@
 						</div>
 						<!-- /.box-body -->
 						<div class="box-footer text-center">
-							<a href="${pageContext.request.contextPath}/pages/tables/reservation.jsp" class="uppercase">View All Table Reservations</a>
+							<a href="/tables/reservations" class="uppercase">View All Table Reservations</a>
 						</div>
 						<!-- /.box-footer -->
 					</div>
@@ -403,7 +403,7 @@
 						<!-- /.box-header -->
 						<div class="box-body">
 							<div class="table-responsive">
-								<table id="ta-table" data-detail-view="true" data-striped="true" data-url="${pageContext.request.contextPath}/takeaway"
+								<table id="ta-table" data-detail-view="true" data-striped="true" data-url="/latest-takeaway-orders"
 									data-method="post" data-query-params='action=list' data-content-type="application/x-www-form-urlencoded"
 									data-pagination="true" data-pagination-loop="false" data-page-size="10" data-resizable="false" data-sort-name="id"
 									data-sort-order="desc" data-detail-formatter="detailFormatter" data-page-list="[10]">

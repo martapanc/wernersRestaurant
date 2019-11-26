@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 @Data
 public class User {
 
+    private int id;
     @SerializedName("full_name") private String fullName;
     private Role.RoleEnum role;
     @SerializedName("role_id") private int roleId;
