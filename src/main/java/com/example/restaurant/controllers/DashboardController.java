@@ -53,7 +53,15 @@ public class DashboardController {
                     return "dashboard/index";
             }
         }
+        return "redirect:/homepage";
+    }
 
+    @GetMapping("/dashboard/documentation")
+    public String documentation(HttpSession session) {
+
+        if (AccessManager.isUserLoggedIn(session)) {
+            return "dashboard/pages/documentation";
+        }
         return "redirect:/homepage";
     }
 }

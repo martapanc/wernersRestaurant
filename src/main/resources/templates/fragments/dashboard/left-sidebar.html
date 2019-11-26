@@ -100,13 +100,13 @@
 
             <div th:if="${session.customer}">
                 <li id="reservation-menu">
-                    <a href="${pageContext.request.contextPath}/pages/customer/tableReservation.jsp" class="menu-item">
+                    <a href="/dashboard/tableReservation" class="menu-item">
                         <i class="fa fa-cutlery"></i>
                         <span>Table Reservation</span>
                     </a>
                 </li>
                 <li id="ta-order-menu">
-                    <a href="${pageContext.request.contextPath}/pages/customer/takeawayOrder.jsp" class="menu-item">
+                    <a href="/dashboard/takeawayOrder" class="menu-item">
                         <i class="fa fa-paper-plane-o"></i>
                         <span>Take-Away Order</span>
                     </a>
@@ -115,7 +115,7 @@
 
             <li class="header">HELP</li>
             <li>
-                <a href="${pageContext.request.contextPath}/pages/documentation.jsp">
+                <a href="/dashboard/documentation">
                     <i class="fa fa-book"></i>
                     <span>Documentation</span>
                 </a>
