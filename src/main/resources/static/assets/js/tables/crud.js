@@ -43,7 +43,7 @@ function initCRUD(API_URL) {
 	    			    console.log('Create form validation has failed');
 	    			  } else {
 	    				e.preventDefault();
-						sendCRUDRequest(API_URL, $(this).serialize());
+						sendCRUDRequest(API_URL + "-action", $(this).serialize());
 	    			  }
 	    		});
 			    	$cModal.modal();
@@ -68,7 +68,7 @@ function initCRUD(API_URL) {
 		    			    console.log('Edit form validation has failed');
 		    			  } else {
 		    				e.preventDefault();
-							sendCRUDRequest(API_URL, $(this).serialize());
+							sendCRUDRequest(API_URL + "-action", $(this).serialize());
 		    			  }
 		    		});
 			    	$eModal.modal();
@@ -94,7 +94,7 @@ function initCRUD(API_URL) {
 		$('#delete-modal-body').html('<p>Are you sure to delete ' + idArray.length + ' entries?<p>');
 		$('#delete-modal').modal();
 		$('#delete-button').on('click', function() {
-				sendCRUDRequest(API_URL, formData);
+				sendCRUDRequest(API_URL + "-action", formData);
 			  });
 	});
 };
@@ -126,6 +126,7 @@ function sendCRUDRequest(URL, formdata) {
 			    closable: false,
 			  }).show();
 			$table.bootstrapTable('refresh');
+			location.reload();
 		},
 		error : function() {
 			console.log(URL, formdata);

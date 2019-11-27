@@ -20,11 +20,13 @@ import static com.example.restaurant.utils.Utils.JSON_UTF_8;
 public class FoodClassController {
 
     private static final String FOOD_CLASS_JSON = "src/main/resources/json/foodClass.json";
+    private static List<FoodClass> foodClassList = getFoodClassList();
 
     @RequestMapping(value = "/foodClass", method = RequestMethod.POST, produces = JSON_UTF_8)
     @ResponseBody
     public String listFoodClasses() {
-        return Utils.readInput(FOOD_CLASS_JSON);
+        Gson gson = new Gson();
+        return gson.toJson(foodClassList);
     }
 
     @GetMapping("/foodClassCRUD")
@@ -35,30 +37,54 @@ public class FoodClassController {
 
     @RequestMapping(value = "/foodClass-find", method = RequestMethod.POST)
     public String findFoodClass(@RequestParam String id, HttpSession session) {
-        FoodClass foodClass = ("0".equals(id) ? new FoodClass() : find(id));
+        FoodClass foodClass = ("0".equals(id) ? new FoodClass() : findById(id));
         session.setAttribute("fc", foodClass);
 
         return "dashboard/crud/foodClassCRUD";
     }
 
-    private FoodClass find(String id) {
+    @RequestMapping(value = "/foodClass-action", method = RequestMethod.POST)
+    @ResponseBody
+    public void foodClassAction(@RequestParam String action, @RequestParam String id, @RequestParam(required = false) String name,
+                                @RequestParam(required = false) String image) {
+        switch (action) {
+            case "edit":
+                int classId = findByName(id);
+                foodClassList.get(classId).setImage(image);
+                foodClassList.get(classId).setName(name);
+                System.out.println("Edited: " + foodClassList.get(classId));
+                break;
+            case "create":
+                FoodClass foodClass = new FoodClass();
+                foodClass.setId(foodClassList.get(foodClassList.size() - 1).getId() + 1);
+                foodClass.setName(name);
+                foodClass.setImage(image);
+                foodClassList.add(foodClass);
+                System.out.println("Created: " + foodClassList.get(foodClassList.size() - 1));
+                break;
+            case "delete":
+                int arrayIdById = findArrayIdById(id);
+                System.out.println("Deleted: " + foodClassList.get(arrayIdById));
+                foodClassList.remove(arrayIdById);
+        }
+    }
+
+    private static List<FoodClass> getFoodClassList() {
         Gson gson = new Gson();
+        return gson.fromJson(Utils.readInput(FOOD_CLASS_JSON), new TypeToken<List<FoodClass>>() {}.getType());
+    }
+
+    private FoodClass findById(String id) {
         long longId = (id == null) ? 0 : Long.parseLong(id);
 
-        List<FoodClass> foodClassList = gson.fromJson(Utils.readInput(FOOD_CLASS_JSON), new TypeToken<List<FoodClass>>() {}.getType());
         return foodClassList.stream().filter(fc -> fc.getId() == longId).findFirst().orElse(null);
     }
 
-    @RequestMapping(value = "/foodClassAction", method = RequestMethod.POST, produces = JSON_UTF_8)
-    @ResponseBody
-    public void foodClassAction(@RequestParam String action, @RequestParam String id) {
+    private int findByName(String name) {
+        return foodClassList.indexOf(foodClassList.stream().filter(fc -> fc.getName().equals(name)).findFirst().orElse(null));
+    }
 
-        switch (action) {
-            case "edit":
-            case "find":
-            case "create":
-            case "delete":
-                System.out.println(action);
-        }
+    private int findArrayIdById(String id) {
+        return foodClassList.indexOf(foodClassList.stream().filter(fc -> id.equals(fc.getId() + "")).findFirst().orElse(null));
     }
 }
