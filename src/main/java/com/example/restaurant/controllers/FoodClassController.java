@@ -69,7 +69,7 @@ public class FoodClassController {
         }
     }
 
-    private static List<FoodClass> getFoodClassList() {
+    public static List<FoodClass> getFoodClassList() {
         Gson gson = new Gson();
         return gson.fromJson(Utils.readInput(FOOD_CLASS_JSON), new TypeToken<List<FoodClass>>() {}.getType());
     }
