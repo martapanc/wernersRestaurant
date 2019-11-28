@@ -83,7 +83,6 @@ public class RoomTableController implements GenericController {
     @Override
     public Object findObjectById(String id) {
         long longId = (id == null) ? 0 : Long.parseLong(id);
-
         return roomTableList.stream().filter(rt -> rt.getId() == longId).findFirst().orElse(null);
 
     }

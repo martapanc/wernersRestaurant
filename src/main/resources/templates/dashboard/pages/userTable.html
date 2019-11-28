@@ -1,10 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WPB | Dashboard </title>
+
+    <link rel="icon" th:href="@{/img/favicon.ico}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link th:href="@{/css/dashboard/bootstrap.min.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/AdminLTE.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/_all-skins.css}" rel="stylesheet" type="text/css">
+
+    <link th:href="@{/css/superslides.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/slick.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/animate.css}" rel="stylesheet" type="text/css">
+
+    <link th:href="@{/css/main/dashboard-style.css}" rel="stylesheet" type="text/css">
+
+    <link th:href="@{/css/main/style.css}" rel="stylesheet" type="text/css">
+
+    <link th:href="@{/css/dashboard/dashboard.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/js/bootstrapTable/bootstrap-table.min.css}" rel="stylesheet" type="text/css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" >
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" >
 </head>
-<body>
-    User table
+
+<body class="hold-transition skin-red sidebar-mini">
+<div class="wrapper">
+
+    <div th:insert="fragments/dashboard/upper-navbar"></div>
+    <div th:insert="fragments/dashboard/left-sidebar"></div>
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                Users <small></small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="#">Tables</a></li>
+                <li class="active">Users</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-body table-responsive">
+                            <table id="table" data-toggle="table" data-url="../../user" data-method="post"
+                                   data-content-type="application/x-www-form-urlencoded" data-query-params='action=list' data-striped="true"
+                                   data-show-columns="true" data-pagination="true" data-pagination-loop="false" data-show-refresh="true" data-search="true"
+                                   data-resizable="true" data-show-toggle="true" data-show-export="true" data-page-size="20">
+                                <thead>
+                                <tr>
+                                    <th data-field="id" data-sortable="true">Id</th>
+                                    <th data-field="email" data-sortable="true">E-Mail</th>
+                                    <th data-field="role" data-sortable="true">Role</th>
+                                    <th data-field="full_name" data-sortable="true">Full Name</th>
+                                    <th data-field="billing_address" data-sortable="true">Billing Address</th>
+                                    <th data-field="phone_number" data-sortable="true">Phone Number</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div th:insert="fragments/dashboard/footer :: footer"></div>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- Javascript Files -->
+<script th:src="@{/js/jQuery/jquery-2.2.3.min.js}"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+
+<script th:src="@{/js/bootstrapTable/bootstrap-table.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/locale/bootstrap-table-en-US.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/extensions/tableExport-jquery/tableExport.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/extensions/export/bootstrap-table-export.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/extensions/resizable/bootstrap-table-resizable.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/extensions/colResizable/colResizable-1.6.min.js}"></script>
+<script th:src="@{/js/bootstrapTable/extensions/group-by-v2/bootstrap-table-group-by.min.js}"></script>
+<script th:src="@{/js/validator.min.js}"></script>
+
+<script th:src="@{/js/tables/tableutil.js}"></script>
+<script th:src="@{/js/tables/crud.js}"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#table-menu').addClass('active');
+        $('#table-menu-user').addClass('active');
+    });
+</script>
 </body>
 </html>

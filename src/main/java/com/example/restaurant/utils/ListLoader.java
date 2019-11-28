@@ -5,6 +5,7 @@ import com.example.restaurant.entity.Item;
 import com.example.restaurant.entity.OrderItem;
 import com.example.restaurant.entity.RoomTable;
 import com.example.restaurant.entity.TakeawayOrder;
+import com.example.restaurant.entity.User;
 import com.example.restaurant.entity.manyToMany.TakeawayOrder_OrderItem;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -19,6 +20,7 @@ public class ListLoader {
     private static final String ORDER_ITEM_TAKEAWAY_ORDER_JSON = "src/main/resources/json/orderItem_takeawayOrder.json";
     private static final String ORDER_ITEM_JSON = "src/main/resources/json/orderItem.json";
     private static final String ROOM_TABLE_JSON = "src/main/resources/json/roomTable.json";
+    private static final String USER_JSON = "src/main/resources/json/user.json";
 
     public static List<FoodClass> foodClassList = getFoodClassList();
     public static List<Item> itemList = getItemList();
@@ -26,6 +28,7 @@ public class ListLoader {
     public static List<TakeawayOrder_OrderItem> orderItemTakeawayOrderList = getOrderItemTakeawayOrderList();
     public static List<OrderItem> orderItemList = getOrderItemList();
     public static List<RoomTable> roomTableList = getRoomTableList();
+    public static List<User> userList = getUserList();
 
     private static List<FoodClass> getFoodClassList() {
         return new Gson().fromJson(Utils.readInput(FOOD_CLASS_JSON), new TypeToken<List<FoodClass>>() {
@@ -54,6 +57,11 @@ public class ListLoader {
 
     private static List<RoomTable> getRoomTableList() {
         return new Gson().fromJson(Utils.readInput(ROOM_TABLE_JSON), new TypeToken<List<RoomTable>>() {
+        }.getType());
+    }
+
+    private static List<User> getUserList() {
+        return new Gson().fromJson(Utils.readInput(USER_JSON), new TypeToken<List<User>>() {
         }.getType());
     }
 }
