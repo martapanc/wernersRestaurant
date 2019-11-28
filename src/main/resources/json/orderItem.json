@@ -4,21 +4,21 @@
     "version_number": 0,
     "comment": "this is item with id 5 and qty 10",
     "quantity": 10,
-    "item_id": "NULL"
+    "item_id": 54
   },
   {
     "id": 92,
     "version_number": 1,
     "comment": "sample comment",
     "quantity": 7,
-    "item_id": "NULL"
+    "item_id": 54
   },
   {
     "id": 93,
     "version_number": 1,
     "comment": "this is item with id 5 and qty 10",
     "quantity": 10,
-    "item_id": "NULL"
+    "item_id": 54
   },
   {
     "id": 176,
