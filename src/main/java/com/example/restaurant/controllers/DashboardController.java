@@ -37,17 +37,17 @@ public class DashboardController {
         if (AccessManager.isUserLoggedIn(session) && AccessManager.isAllowed(session, Role.Section.TABLES)) {
             switch (tableName) {
                 case "foodClass":
-                    return "dashboard/pages/foodClassTable";
+                    return "dashboard/tables/foodClassTable";
                 case "items":
-                    return "dashboard/pages/itemTable";
+                    return "dashboard/tables/itemTable";
                 case "reservations":
-                    return "dashboard/pages/reservationTable";
+                    return "dashboard/tables/reservationTable";
                 case "restaurant":
-                    return "dashboard/pages/restaurantTablesTable";
+                    return "dashboard/tables/restaurantTablesTable";
                 case "takeaway":
-                    return "dashboard/pages/takeawayOrderTable";
+                    return "dashboard/tables/takeawayOrderTable";
                 case "users":
-                    return "dashboard/pages/userTable";
+                    return "dashboard/tables/userTable";
                 default:
                     return "dashboard/index";
             }
@@ -60,6 +60,29 @@ public class DashboardController {
 
         if (AccessManager.isUserLoggedIn(session)) {
             return "dashboard/pages/documentation";
+        }
+        return "redirect:/homepage";
+    }
+
+    @GetMapping("/dashboard/{page}")
+    public String pages(HttpSession session, @PathVariable String page) {
+
+        switch (page) {
+            case "documentation":
+                if (AccessManager.isUserLoggedIn(session)) {
+                    return "dashboard/pages/" + page;
+                }
+            case "scheduler": {
+                if (AccessManager.isUserLoggedIn(session) && AccessManager.isAllowed(session, Role.Section.SCHEDULER)) {
+                    return "dashboard/pages/" + page;
+                }
+            }
+            case "tableReservation":
+            case "takeawayOrder": {
+                if (AccessManager.isUserLoggedIn(session) && AccessManager.isAllowed(session, Role.Section.CUSTOMER)) {
+                    return "dashboard/pages/" + page;
+                }
+            }
         }
         return "redirect:/homepage";
     }
