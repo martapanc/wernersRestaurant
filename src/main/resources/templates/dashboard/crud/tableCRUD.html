@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<!-- create form -->
+<form id="create-form" data-toggle="validator">
+    <div class="form-group">
+        <label for="id">Room Table ID</label>
+        <input type="text" class="form-control" placeholder="auto-assigned" readonly>
+    </div>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Table name" th:value="${session.rt.getName()}" required>
+    </div>
+    <div class="form-group">
+        <label for="seats">Seats</label>
+        <input type="number" class="form-control" name="seats" placeholder="Insert number of seats" th:value="${session.rt.getSeats()}"
+               min="1" max="12" step="1" required>
+    </div>
+    <div class="form-group">
+        <label for="room">Room</label>
+        <input type="text" class="form-control" name="room" placeholder="Insert room name" th:value="${session.rt.getRoom()}">
+    </div>
+    <div class="form-group">
+        <label for="category">Category</label> <select class="form-control" name="category" required>
+        <th:block th:each="entry : ${session.categories}">
+            <th:block th:if="${entry == session.rt.getCategory()}">
+                <option th:value="${entry}" th:text="${entry}" selected></option>
+            </th:block>
+            <th:block th:if="${entry != session.rt.getCategory()}">
+                <option th:value="${entry}" th:text="${entry}"></option>
+            </th:block>
+        </th:block>
+    </select>
+    </div>
+    <input type="hidden" id="action" name="action" value="create">
+    <input type="hidden" name="id" value="0">
+    <input type="hidden" name="version-number" value="${rt.versionNumber}">
+</form>
+
+<!-- Edit form -->
+
+<form id="edit-form" data-toggle="validator">
+    <div class="form-group">
+        <label for="id">Room Table ID</label>
+        <input type="text" class="form-control" name="id" th:value="${session.rt.getId()}" placeholder="auto-assigned" readonly>
+    </div>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Table name" th:value="${session.rt.getName()}" required>
+    </div>
+    <div class="form-group">
+        <label for="seats">Seats</label>
+        <input type="number" class="form-control" name="seats" placeholder="Insert number of seats" th:value="${session.rt.getSeats()}" min="1" max="12"
+               step="1" required>
+    </div>
+    <div class="form-group">
+        <label for="room">Room</label>
+        <input type="text" class="form-control" name="room" placeholder="Insert room name" th:value="${session.rt.getRoom()}">
+    </div>
+    <div class="form-group">
+        <label for="category">Category</label> <select class="form-control" name="category" required>
+        <th:block th:each="entry : ${session.categories}">
+            <th:block th:if="${entry == session.rt.getCategory()}">
+                <option th:value="${entry}" th:text="${entry}" selected></option>
+            </th:block>
+            <th:block th:if="${entry != session.rt.getCategory()}">
+                <option th:value="${entry}" th:text="${entry}"></option>
+            </th:block>
+        </th:block>
+    </select>
+    </div>
+    <input type="hidden" id="action" name="action" value="edit">
+    <input type="hidden" name="version-number" value="${rt.versionNumber}">
+</form>
+</html>

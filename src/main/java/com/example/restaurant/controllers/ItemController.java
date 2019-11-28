@@ -61,19 +61,23 @@ public class ItemController implements GenericController {
     @RequestMapping(value = "/item-action", method = RequestMethod.POST)
     @ResponseBody
     public void action(@RequestParam String action, @RequestParam String id, HttpServletRequest request) {
-        int foodClassId = Integer.parseInt(request.getParameter("foodClass"));
-        int foodClassListId = foodClassList.indexOf(foodClassList.stream().filter(f -> foodClassId == f.getId()).findFirst().orElse(null));
+
+        int foodClassId, foodClassListId;
 
         switch (action) {
             case "edit":
-                int itemId = findIdByName(request.getParameter("name"));
+                foodClassId = getFoodClass(request);
+                foodClassListId = getFoodClassListId(foodClassId);
+                int itemId = findArrayIdById(request.getParameter("id"));
                 itemList.get(itemId).setName(request.getParameter("name"));
-                itemList.get(itemId).setFoodClass_id(Integer.parseInt(request.getParameter("foodClass")));
+                itemList.get(itemId).setFoodClass_id(getFoodClass(request));
                 itemList.get(itemId).setFoodClass(foodClassList.get(foodClassListId).getName());
                 itemList.get(itemId).setPrice(Double.parseDouble(request.getParameter("price")));
                 System.out.println("Edited: " + itemList.get(itemId));
                 break;
             case "create":
+                foodClassId = getFoodClass(request);
+                foodClassListId = getFoodClassListId(foodClassId);
                 Item item = Item.builder()
                         .id(itemList.get(itemList.size() - 1).getId() + 1)
                         .name(request.getParameter("name"))
@@ -88,7 +92,16 @@ public class ItemController implements GenericController {
             case "delete":
                 int arrayIdById = findArrayIdById(id);
                 System.out.println("Deleted: " + itemList.get(arrayIdById));
+                itemList.remove(arrayIdById);
         }
+    }
+
+    private int getFoodClassListId(int foodClassId) {
+        return foodClassList.indexOf(foodClassList.stream().filter(f -> foodClassId == f.getId()).findFirst().orElse(null));
+    }
+
+    private int getFoodClass(HttpServletRequest request) {
+        return Integer.parseInt(request.getParameter("foodClass"));
     }
 
     @Override

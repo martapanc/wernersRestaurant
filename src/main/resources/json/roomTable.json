@@ -4,7 +4,7 @@
     "version_number": 0,
     "category": "highend",
     "name": "Table 1",
-    "room": "Room 0",
+    "room": "Room 3",
     "seats": 3
   },
   {
@@ -36,7 +36,7 @@
     "version_number": 0,
     "category": "highend",
     "name": "Table 5",
-    "room": "Room 0",
+    "room": "Room 3",
     "seats": 5
   },
   {
@@ -52,7 +52,7 @@
     "version_number": 0,
     "category": "highend",
     "name": "Table 7",
-    "room": "Room 0",
+    "room": "Room 3",
     "seats": 9
   },
   {
@@ -84,7 +84,7 @@
     "version_number": 0,
     "category": "highend",
     "name": "Table 11",
-    "room": "Room 0",
+    "room": "Room 3",
     "seats": 7
   },
   {
@@ -92,7 +92,7 @@
     "version_number": 0,
     "category": "highend",
     "name": "Table 12",
-    "room": "Room 0",
+    "room": "Room 3",
     "seats": 1
   },
   {
@@ -156,7 +156,7 @@
     "version_number": 0,
     "category": "highend",
     "name": "Table 20",
-    "room": "Room 0",
+    "room": "Room 3",
     "seats": 7
   },
   {
@@ -180,7 +180,7 @@
     "version_number": 0,
     "category": "highend",
     "name": "Table 23",
-    "room": "Room 0",
+    "room": "Room 3",
     "seats": 2
   },
   {
@@ -204,7 +204,7 @@
     "version_number": 0,
     "category": "highend",
     "name": "Table 26",
-    "room": "Room 0",
+    "room": "Room 3",
     "seats": 6
   },
   {
@@ -220,7 +220,7 @@
     "version_number": 0,
     "category": "highend",
     "name": "Table 28",
-    "room": "Room 0",
+    "room": "Room 3",
     "seats": 8
   },
   {
