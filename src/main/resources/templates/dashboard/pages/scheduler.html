@@ -84,17 +84,10 @@
 <script th:src="@{/js/fullCalendar/fullcalendar.min.js}"></script>
 <script th:src="@{/js/fullCalendar/locale-all.js}"></script>
 <script th:src="@{/js/scheduler.min.js}"></script>
+<script th:src="@{/js/tab.js}"></script>
 
 <script>
-    $( document ).ready(function() {
-        $('#dashboard-menu').removeClass('active');
-        $('#scheduler-menu').addClass('active');
-        $('#table-menu').removeClass('active');
-        $('#chart-menu').removeClass('active');
-        $('#customer-menu').removeClass('active');
-
-        $('#calendar-menu').removeClass('active');
-    });
+    activeTab(window.location.pathname);
 
     /* initialize the calendar
      -----------------------------------------------------------------*/

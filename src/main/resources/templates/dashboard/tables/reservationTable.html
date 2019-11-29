@@ -86,6 +86,7 @@
 
 <script th:src="@{/js/bootstrap.js}"></script>
 <script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/tab.js}"></script>
 
 <script th:src="@{/js/bootstrapTable/bootstrap-table.min.js}"></script>
 <script th:src="@{/js/bootstrapTable/locale/bootstrap-table-en-US.min.js}"></script>
@@ -100,6 +101,8 @@
 <script th:src="@{/js/tables/crud.js}"></script>
 
 <script>
+    activeTab("");
+
     $(document).ready(function() {
         $('#table-menu').addClass('active');
         $('#table-menu-reservation').addClass('active');

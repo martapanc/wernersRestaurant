@@ -90,13 +90,13 @@
             </li>
 
             <th:block th:if="${session.customer}">
-                <li id="reservation-menu">
+                <li id="tableReservation-menu">
                     <a href="/dashboard/tableReservation">
                         <i class="fa fa-cutlery"></i>
                         <span class="sidebar-title">Table Reservation</span>
                     </a>
                 </li>
-                <li id="ta-order-menu">
+                <li id="takeawayOrder-menu">
                     <a href="/dashboard/takeawayOrder">
                         <i class="fa fa-paper-plane-o"></i>
                         <span class="sidebar-title">Take-Away Order</span>
@@ -105,7 +105,7 @@
             </th:block>
 
             <li class="header">HELP</li>
-            <li>
+            <li id="documentation-menu">
                 <a href="/dashboard/documentation">
                     <i class="fa fa-book"></i>
                     <span class="sidebar-title">Documentation</span>

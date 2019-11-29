@@ -1,3 +1,4 @@
+
 $(function() {
 
 	'use strict';
@@ -77,7 +78,7 @@ $(function() {
 	$.ajax({
 		type : 'POST',
 		cache : false,
-		url : "/restaurantProject/item",
+		url : "/item",
 		data : {
 			"action" : "list"
 		},
@@ -96,7 +97,7 @@ $(function() {
 	$.ajax({
 		type : 'POST',
 		cache : false,
-		url : "/restaurantProject/reservation",
+		url : "/reservation",
 		data : {
 			"action" : "list"
 		},
@@ -104,7 +105,7 @@ $(function() {
 			$("#reservation-count").html(response.length);
 			orderTot += response.length;
 			response.forEach(function(entry) {
-				var d = new Date(entry.startDate);
+				var d = new Date(entry.start_date);
 				switch (d.getMonth()) {
 					case 8:  sepR++; break;
 					case 9:  octR++; break;
@@ -125,7 +126,7 @@ $(function() {
 	$.ajax({
 		type : 'POST',
 		cache : false,
-		url : "/restaurantProject/takeaway",
+		url : "/takeaway",
 		data : {
 			"action" : "list"
 		},
@@ -144,7 +145,7 @@ $(function() {
 			$("#tot-profit").html("€ " + profit.toFixed(2));
 			
 			response.forEach(function(entry) {
-				var d = new Date(entry.orderDate);
+				var d = new Date(entry.order_date);
 				switch (d.getMonth()) {
 					case 8:  sepT++; break;
 					case 9:  octT++; break;
@@ -165,7 +166,7 @@ $(function() {
 	$.ajax({
 		type : 'POST',
 		cache : false,
-		url : "/restaurantProject/foodClass",
+		url : "/foodClass",
 		data : {
 			"action" : "list"
 		},

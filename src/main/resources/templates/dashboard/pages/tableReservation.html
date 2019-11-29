@@ -23,6 +23,7 @@
 
     <link th:href="@{/css/dashboard/dashboard.css}" rel="stylesheet" type="text/css">
     <link th:href="@{/js/bootstrapTable/bootstrap-table.min.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/datetimepicker.min.css}" rel="stylesheet" type="text/css">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" >
     <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" >
@@ -35,7 +36,20 @@
     <div th:insert="fragments/dashboard/left-sidebar"></div>
 
     <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Online Reservation <small></small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/dashboard"><i
+                        class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="/">Customer View</a></li>
+                <li class="active">Table Reservation</li>
+            </ol>
+        </section>
 
+        <div th:insert="pages/reservation/tableResContent"></div>
     </div>
 
     <div th:insert="fragments/dashboard/footer :: footer"></div>
@@ -49,6 +63,7 @@
 
 <script th:src="@{/js/bootstrap.js}"></script>
 <script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/tab.js}"></script>
 
 <script th:src="@{/js/bootstrapTable/bootstrap-table.min.js}"></script>
 <script th:src="@{/js/bootstrapTable/locale/bootstrap-table-en-US.min.js}"></script>
@@ -62,8 +77,13 @@
 <script th:src="@{/js/tables/tableutil.js}"></script>
 <script th:src="@{/js/tables/crud.js}"></script>
 
-<script>
+<script th:src="@{/js/moment/moment.min.js}"></script>
+<script th:src="@{/js/validator.min.js}"></script>
+<script th:src="@{/js/datetimepicker.min.js}"></script>
+<script th:src="@{/js/reservation.js}"></script>
 
+<script>
+    activeTab(window.location.pathname);
 </script>
 </body>
 </html>
