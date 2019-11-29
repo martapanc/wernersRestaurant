@@ -11,7 +11,7 @@ public class Reservation {
     private int id;
     @SerializedName("start_date") private String startDate;
     @SerializedName("end_date") private String endDate;
-//    @SerializedName("room_table") private RoomTable roomTable;
+    @SerializedName("roomTable_id") private int roomTableId;
     private String comment;
     private User user;
     @SerializedName("customer_name") private String customerName;

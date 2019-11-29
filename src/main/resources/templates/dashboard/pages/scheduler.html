@@ -21,8 +21,8 @@
 
     <link th:href="@{/css/main/style.css}" rel="stylesheet" type="text/css">
 
-    <link th:href="@{/css/dashboard/dashboard.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/js/bootstrapTable/bootstrap-table.min.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/js/fullCalendar/fullcalendar.min.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/scheduler.min.css}" rel="stylesheet" type="text/css">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" >
     <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" >
@@ -35,7 +35,28 @@
     <div th:insert="fragments/dashboard/left-sidebar"></div>
 
     <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                Scheduler
+                <small>Control panel</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/dashboard"><i class="fa fa-home"></i> Home</a></li>
+                <li class="active">Scheduler</li>
+            </ol>
+        </section>
 
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-body no-padding">
+                            <div id="scheduler"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <div th:insert="fragments/dashboard/footer :: footer"></div>
@@ -59,11 +80,82 @@
 <script th:src="@{/js/bootstrapTable/extensions/group-by-v2/bootstrap-table-group-by.min.js}"></script>
 <script th:src="@{/js/validator.min.js}"></script>
 
-<script th:src="@{/js/tables/tableutil.js}"></script>
-<script th:src="@{/js/tables/crud.js}"></script>
+<script th:src="@{/js/moment.min.js}"></script>
+<script th:src="@{/js/fullCalendar/fullcalendar.min.js}"></script>
+<script th:src="@{/js/fullCalendar/locale-all.js}"></script>
+<script th:src="@{/js/scheduler.min.js}"></script>
 
 <script>
+    $( document ).ready(function() {
+        $('#dashboard-menu').removeClass('active');
+        $('#scheduler-menu').addClass('active');
+        $('#table-menu').removeClass('active');
+        $('#chart-menu').removeClass('active');
+        $('#customer-menu').removeClass('active');
 
+        $('#calendar-menu').removeClass('active');
+    });
+
+    /* initialize the calendar
+     -----------------------------------------------------------------*/
+    $('#scheduler').fullCalendar({
+        schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
+        nowIndicator: true,
+        resourceAreaWidth: 150,
+        height: 'auto',
+        editable: false,
+        slotDuration: '00:15',
+        columnFormat: 'H(:mm)',
+        minTime: '11:00',
+        maxTime: '26:00',
+        slotWidth: 15,
+        aspectRatio: 1.5,
+        scrollTime: new Date(),
+        header: {
+            left: 'promptResource today prev,next',
+            center: 'title',
+            right: 'timelineDay,timelineThreeDays,agendaWeek,month'
+        },
+        defaultView: 'timelineDay',
+        views: {
+            month: {
+                titleFormat: 'MMMM YYYY',
+                columnFormat: 'dddd'
+            },
+            agendaWeek: {
+                titleFormat: 'MMM DD, YYYY',
+                columnFormat: 'ddd M/D'
+            },
+            timelineThreeDays: {
+                type: 'timeline',
+                duration: { days: 3 }
+            }
+        },
+        resourceColumns: [
+            {
+                labelText: 'Tables',
+                field: 'title'
+            },
+            {
+                labelText: 'Seats',
+                field: 'seats'
+            }
+        ],
+        resources: {
+            url: '/roomTable-scheduler',
+            type: 'POST'
+        },
+        events: {
+            url: '/reservation-scheduler',
+            type: 'POST'
+        }
+    });
+
+
+    // readjust sizing after font load
+    $(window).on('load', function() {
+        $('#scheduler').fullCalendar('render');
+    });
 </script>
 </body>
 </html>

@@ -1,7 +1,10 @@
 package com.example.restaurant.controllers;
 
 import com.example.restaurant.entity.RoomTable;
+import com.google.gson.FieldNamingStrategy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -78,6 +82,13 @@ public class RoomTableController implements GenericController {
                 System.out.println("Deleted: " + roomTableList.get(arrayIdById));
                 roomTableList.remove(arrayIdById);
         }
+    }
+
+    @RequestMapping(value = "/roomTable-scheduler", method = RequestMethod.POST, produces = JSON_UTF_8)
+    @ResponseBody
+    public String listForScheduler() {
+        GsonBuilder gsonBuilder = new GsonBuilder().setFieldNamingStrategy(f -> f.getName().equals("name") ? "title" : f.getName());
+        return gsonBuilder.create().toJsonTree(roomTableList).getAsJsonArray().toString();
     }
 
     @Override
