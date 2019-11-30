@@ -83,6 +83,11 @@ public class DashboardController {
                     return "dashboard/pages/" + page;
                 }
             }
+            case "reservationInvoice":
+            case "takeawayCheckout":
+                if (AccessManager.isUserLoggedIn(session) && AccessManager.isAllowed(session, Role.Section.CUSTOMER)) {
+                    return "dashboard/pages/checkout/" + page;
+                }
         }
         return "redirect:/homepage";
     }

@@ -81,7 +81,8 @@ public class ListLoader {
         for (Reservation r : reservations) {
             LocalDateTime start = LocalDateTime.parse(r.getStartDate(), formatter);
             LocalDateTime end = LocalDateTime.parse(r.getEndDate(), formatter);
-            long dayDifference = DAYS.between(start, LocalDateTime.now()) + 1;
+
+            long dayDifference = start.getYear() < 2019 ? DAYS.between(start, LocalDateTime.now()) + 1 : 0;
 
             start = start.plusDays(dayDifference);
             end = end.plusDays(dayDifference);

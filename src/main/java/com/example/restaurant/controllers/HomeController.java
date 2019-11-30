@@ -26,9 +26,19 @@ public class HomeController {
         return "pages/tableRes";
     }
 
+    @GetMapping("/reservationInvoice")
+    public String reservationInvoice() {
+        return "pages/checkout/reservationInvoice";
+    }
+
     @GetMapping("/takeaway")
     public String takeaway() {
         return "pages/takeaway";
+    }
+
+    @GetMapping("/takeawayCheckout")
+    public String takeawayCheckout() {
+        return "pages/checkout/takeawayCheckout";
     }
 
     @GetMapping("/login")
