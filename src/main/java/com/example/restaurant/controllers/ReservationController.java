@@ -35,13 +35,7 @@ public class ReservationController {
 
         for (Reservation res : reservationList) {
             User user = userList.stream().filter(u -> u.getId() == res.getUser_id()).findFirst().orElse(null);
-            if (user != null) {
-                res.setCustomerName(user.getFullName());
-                res.setUser_id(user.getId());
-            } else {
-                res.setCustomerName("unregistered user");
-                res.setUser_id('-');
-            }
+            res.setUser_id(user != null ? user.getId() : '-');
         }
         return new Gson().toJson(reservationList);
     }
