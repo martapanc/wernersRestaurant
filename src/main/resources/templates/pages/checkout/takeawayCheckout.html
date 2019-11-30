@@ -1,86 +1,47 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>WPB | Dashboard </title>
+    <title>WPB | Takeaway Order</title>
 
     <link rel="icon" th:href="@{/img/favicon.ico}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
-    <link th:href="@{/css/dashboard/bootstrap.min.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/css/AdminLTE.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/css/_all-skins.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/home/reservation.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/home/documentation.css}" rel="stylesheet" type="text/css">
 
-    <link th:href="@{/css/superslides.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/css/slick.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/css/animate.css}" rel="stylesheet" type="text/css">
-
-    <link th:href="@{/css/main/dashboard-style.css}" rel="stylesheet" type="text/css">
     <link th:href="@{/css/main/style.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/css/home/takeaway.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/AdminLTE.css}" rel="stylesheet" type="text/css">
 
-    <link th:href="@{/css/dashboard/dashboard.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{/js/bootstrapTable/bootstrap-table.min.css}" rel="stylesheet" type="text/css">
-
-    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
     <link th:href="@{/css/datetimepicker.min.css}" rel="stylesheet" type="text/css">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" >
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" >
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
-<body class="hold-transition skin-red sidebar-mini">
-<div class="wrapper">
+<body>
 
-    <div th:insert="fragments/dashboard/upper-navbar"></div>
-    <div th:insert="fragments/dashboard/left-sidebar"></div>
+<div th:insert="fragments/header :: header"></div>
 
-    <div class="content-wrapper">
+<div class="col-md-12">
+    <div class="body">
         <section class="content-header">
             <h1>
-                Your Order <small>#007612</small>
+                Takeaway Checkout <small></small>
             </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Customer</a></li>
-                <li class="active">Order</li>
-            </ol>
         </section>
-        <jsp:include page="../../WEB-INF/customer/takeawayCheckoutContent.jsp"></jsp:include>
-        <div class="clearfix"></div>
+
+        <div th:insert="fragments/content/takeawayCheckoutContent"></div>
     </div>
-
-    <div th:insert="fragments/dashboard/footer :: footer"></div>
-
 </div>
-<!-- ./wrapper -->
 
-<!-- Javascript Files -->
+<div th:insert="fragments/footer :: footer"></div>
+
+</body>
+
 <script th:src="@{/js/jQuery/jquery-2.2.3.min.js}"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-
 <script th:src="@{/js/bootstrap.js}"></script>
 <script th:src="@{/js/app.js}"></script>
-<script th:src="@{/js/tab.js}"></script>
 
-<script th:src="@{/js/bootstrapTable/bootstrap-table.min.js}"></script>
-<script th:src="@{/js/bootstrapTable/locale/bootstrap-table-en-US.min.js}"></script>
-<script th:src="@{/js/bootstrapTable/extensions/tableExport-jquery/tableExport.min.js}"></script>
-<script th:src="@{/js/bootstrapTable/extensions/export/bootstrap-table-export.min.js}"></script>
-<script th:src="@{/js/bootstrapTable/extensions/resizable/bootstrap-table-resizable.min.js}"></script>
-<script th:src="@{/js/bootstrapTable/extensions/colResizable/colResizable-1.6.min.js}"></script>
-<script th:src="@{/js/bootstrapTable/extensions/group-by-v2/bootstrap-table-group-by.min.js}"></script>
-<script th:src="@{/js/validator.min.js}"></script>
-
-<script th:src="@{/js/tables/tableutil.js}"></script>
-<script th:src="@{/js/tables/crud.js}"></script>
-
-<script th:src="@{/js/takeaway/takeawayOrderUtil.js}"></script>
-
-<script>
-    activeTab(window.location.pathname);
-</script>
-</body>
 </html>

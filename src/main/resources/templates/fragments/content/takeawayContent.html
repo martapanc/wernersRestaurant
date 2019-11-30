@@ -1,5 +1,6 @@
-<section class="content">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
+<section class="content">
     <div class="row">
         <div class="col-md-8">
             <div class="box box-solid box-primary">
@@ -10,7 +11,7 @@
                 <form>
                     <div class="box-body">
                         <div class="food-menu col-md-3">
-                            <input type="hidden" id="session" value="${sessionScope.userSession.user.id}"/>
+                            <input type="hidden" id="session" th:value="${session.userSession}"/>
                             <div class="btn-group btn-block btn-group-vertical" id="food-class-list">
 
                             </div>
