@@ -1,6 +1,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<section class="invoice">
+<style>
+    .invoice-section {
+        height: 360px;
+    }
+</style>
+
+<section class="invoice invoice-section">
     <div class="row">
         <div class="col-xs-12">
             <h2 class="page-header">
@@ -19,7 +25,7 @@
                     <h3 class="box-title">Take-Away Checkout</h3>
                 </div>
                 <div class="reservation-area">
-                    <form id="reservation-form" data-toggle="validator" role="form">
+                    <form id="reservation-form" data-toggle="validator">
                         <div class="box-body">
                             <div class="col-md-12">
                                 <div class="col-md-1">
@@ -40,7 +46,7 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>First name:</label>
-                                        <input id="firstname" name="firstname" type="text" class="form-control" placeholder="John"
+                                        <input id="firstname" name="firstname" type="text" class="form-control" placeholder="John" required
                                                th:value="${session.userSession != null ? session.userSession.getUser().getFirstName() : ''}"/>
                                     </div>
                                 </div>
@@ -50,6 +56,7 @@
                                         <div class="form-group">
                                             <label>Last name:</label>
                                             <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Watson"
+                                                   required
                                                    th:value="${session.userSession != null ? session.userSession.getUser().getLastName() : ''}"/>
                                         </div>
                                     </div>
@@ -65,7 +72,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-home"></i>
                                             </div>
-                                            <input id="address" name="address" type="text" class="form-control"
+                                            <input id="address" name="address" type="text" class="form-control" required
                                                    placeholder="221B Baker St, London, UK"
                                                    th:value="${session.userSession != null ? session.userSession.getUser().getBillingAddress() : ''}"/>
                                         </div>
@@ -83,6 +90,7 @@
                                                 <i class="fa fa-phone"></i>
                                             </div>
                                             <input name="telephone" id="telephone" type="text" pattern="^[0-9]{10}$" class="form-control"
+                                                   required
                                                    th:value="${session.userSession != null ? session.userSession.getUser().getPhoneNumber() : ''}"/>
                                         </div>
                                     </div>
@@ -97,11 +105,11 @@
                                                 <i class="fa fa-at"></i>
                                             </div>
                                             <input id="email" name="email" type="text" class="form-control" placeholder="email@example.com"
+                                                   required
                                                    th:value="${session.userSession != null ? session.userSession.getUser().getEmail() : ''}"/>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
 
                             <div class="col-md-6">
@@ -112,39 +120,43 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-md-12" style="margin: 10px 0">
+                                <div class="col-md-12">
+                                    <button type="submit" id="submit-btn" class="btn btn-primary">Confirm</button>
+                                    <button type="reset" id="reset-btn" class="btn btn-warning">Reset</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="box-footer">
-                            <button type="submit" id="submit-btn" class="btn btn-primary">Confirm</button>
-                            <button type="reset" id="reset-btn" class="btn btn-warning">Reset</button>
+                            <div class="col-md-12">
+                                <div class="col-xs-6 table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Item</th>
+                                            <th>Quantity</th>
+                                            <th>Cost</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="cart"></tbody>
+                                    </table>
+                                </div>
+                                <div class="col-sm-1"></div>
+
+                                <div class="col-sm-5">
+                                    <p class="lead">Payment Methods we accept:</p>
+                                    <img th:src="@{/img/payments/cash.ico}" height="45" alt="Cash">
+                                    <img th:src="@{/img/payments/visa.png}" alt="Visa">
+                                    <img th:src="@{/img/payments/mastercard.png}" alt="Mastercard">
+                                    <img th:src="@{/img/payments/mestro.png}" alt="Maestro">
+                                    <img th:src="@{/img/payments/amex.png}" alt="American Express">
+                                    <img th:src="@{/img/payments/paypal2.png}" alt="PayPal">
+                                </div>
+                            </div>
                         </div>
                     </form>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-6 table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Item</th>
-                                <th>Quantity</th>
-                                <th>Cost</th>
-                            </tr>
-                            </thead>
-                            <tbody class="cart"></tbody>
-                        </table>
-                    </div>
-                    <div class="col-sm-1"></div>
-
-                    <div class="col-sm-4">
-                        <p class="lead">Payment Methods we accept:</p>
-                        <img th:src="@{/img/payments/cash.ico}" height="45" alt="Cash">
-                        <img th:src="@{/img/payments/visa.png}" alt="Visa">
-                        <img th:src="@{/img/payments/mastercard.png}" alt="Mastercard">
-                        <img th:src="@{/img/payments/mestro.png}" alt="Maestro">
-                        <img th:src="@{/img/payments/amex.png}" alt="American Express">
-                        <img th:src="@{/img/payments/paypal2.png}" alt="PayPal">
-                    </div>
                 </div>
             </div>
         </div>

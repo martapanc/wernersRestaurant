@@ -8,7 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.HashSet;
@@ -63,4 +66,10 @@ public class TakeawayController {
         return new Gson().toJson(takeawayOrderList);
     }
 
+    @RequestMapping(value = "/create-takeaway", method = RequestMethod.POST)
+    @ResponseBody
+    public ModelAndView createTakeawayOrder(HttpServletRequest request, HttpSession session) {
+
+        return new ModelAndView("");
+    }
 }
