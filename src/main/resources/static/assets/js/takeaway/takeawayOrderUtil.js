@@ -172,10 +172,10 @@ $("#checkout-btn").on("click", function () {
     }
     var session = document.getElementById("session").value;
     console.log("session " + session);
-    if (session != "")
-        window.location.href = "takeawayCheckout.jsp";
+    if (session !== "")
+        window.location.href = "/dashboard/takeawayCheckout";
     else
-        window.location.href = "/restaurantProject/pages/home/takeaway-checkout.jsp";
+        window.location.href = "/takeawayCheckout";
 });
 
 // Reset button functions

@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<style>
+    .invoice-message {
+        margin-bottom: 30px;
+    }
+</style>
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                <img th:src="@{/img/burger160x160.jpg}" width="40"> &ensp;Werner's Panini & Burgers
+                <span class="pull-right">
+                    <h4>Date: &ensp;
+                        <strong th:text="${session.today}"></strong>
+                    </h4>
+                </span>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 invoice-message">
+            <span class="lead">Thank you for reserving a table at <strong>Werner's Panini & Burgers</strong>. We're looking forward to seeing you!</span>
+            <br/>
+        </div>
+    </div>
+    <div class="row invoice-info">
+        <div class="col-sm-4 invoice-col">
+            <span class="lead">Reservation details</span><br>
+            <h4>
+                <strong th:text="${session.title}"></strong>&emsp;<strong th:text="${session.reservation.getCustomerName()}"></strong><br/>
+                <strong>Tel: </strong>&emsp;<span th:text="${session.phone}"></span><br/>
+                <strong>Email:</strong>&emsp;<span th:text="${session.email}"></span><br/>
+            </h4>
+        </div>
+        <div class="col-sm-4 invoice-col">
+            <span class="lead">Your reservation</span><br>
+            <h4>
+                <strong>Date:</strong>&emsp;<span th:text="${session.date}"></span><br/>
+                <strong>Time:</strong>&emsp;<span th:text="${session.time}"></span><br/>
+                <strong>Number of guests: </strong>&emsp;<span th:text="${session.guests}"></span><br/>
+            </h4>
+        </div>
+        <div class="col-sm-4">
+            <p class="lead">Payment Methods we accept:</p>
+            <img th:src="@{/img/payments/visa.png}" alt="Visa"/>
+            <img th:src="@{/img/payments/mastercard.png}" alt="Mastercard"/>
+            <img th:src="@{/img/payments/mestro.png}" alt="Maestro"/>
+            <img th:src="@{/img/payments/amex.png}" alt="American Express"/>
+            <img th:src="@{/img/payments/cash.ico}" height="45" alt="Cash"/>
+        </div>
+    </div>
+    <div class="row no-print">
+        <div class="col-xs-12">
+            <h2 class="page-footer"></h2>
+        </div>
+    </div>
+</section>
