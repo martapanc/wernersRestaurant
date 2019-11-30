@@ -18,17 +18,17 @@ public class HomeController {
 
     @GetMapping("/documentation")
     public String documentation() {
-        return "pages/documentation/docs";
+        return "pages/docs";
     }
 
     @GetMapping("/reservation")
     public String tableReservation() {
-        return "pages/reservation/tableRes";
+        return "pages/tableRes";
     }
 
     @GetMapping("/takeaway")
     public String takeaway() {
-        return "pages/takeaway/takeaway";
+        return "pages/takeaway";
     }
 
     @GetMapping("/login")

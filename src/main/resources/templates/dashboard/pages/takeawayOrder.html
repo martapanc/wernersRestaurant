@@ -44,13 +44,13 @@
                 Take-Away Order <small>Customer View</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="../pages/dashboard.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li><a href="#">Customer View</a></li>
                 <li class="active">Take-Away Order</li>
             </ol>
         </section>
 
-        <div th:insert="pages/takeaway/takeawayContent"></div>
+        <div th:insert="fragments/content/takeawayContent"></div>
     </div>
 
     <div th:insert="fragments/dashboard/footer :: footer"></div>
