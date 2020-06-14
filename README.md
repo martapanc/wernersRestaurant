@@ -1,5 +1,7 @@
 # Werner's Restaurant
 
+Live instance: https://werners-restaurant.herokuapp.com/
+
 ### Requisites
 - Java 11
 - IntelliJ Idea (recommended)
